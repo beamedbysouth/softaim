@@ -1,0 +1,2805 @@
+--[[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡀⠀⠀⠀⠀⠀⠀⠀⢀⣠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠁⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢶⣿⢃⣠⣴⣶⣶⣿⣛⢯⣹⣾⠁⠀⠀⠀⠀⠀⢀⣀⣤⣴⣶⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠀⠀⠀⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣻⣾⣿⣞⣯⣷⣽⣾⣿⣁⣀⣠⢤⡶⣶⠿⣻⣶⣟⡿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣟⣯⣿⣶⣯⣿⣿⣿⡁⠀⣴⠿⣟⣿⣟⣿⣻⢷⢯⣞⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⢈⡇⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡶⢒⣖⣲⡶⢶⡖⣶⣒⢶⡲⣞⣫⠭⣭⣭⣽⣭⣯⣽⣿⣿⣿⣿⣿⣿⣿⠿⢿⡿⠿⠿⠿⣌⠿⢿⣿⣿⣿⣿⡾⣽⢯⣟⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠘⡀⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣯⣛⢧⣛⢧⣛⡶⣹⣎⢷⣝⡮⣟⢷⡾⣹⢯⡟⠉⠉⠛⢿⣿⣿⣯⣟⣿⣫⣽⡿⣃⣔⣬⣿⣷⣯⣿⣿⣿⣿⣽⣻⣾⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣟⡾⣭⡟⣾⣹⢗⣾⣫⢾⡽⣽⢾⡽⢯⡟⠀⠀⠀⢀⢈⣿⣿⣿⣿⣿⠿⢻⣷⣼⣿⣿⣟⣿⣟⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠀⠐⠀⠀⠀⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣷⣿⣷⣯⣟⡾⣽⣳⢿⡽⣾⡽⡟⠀⠀⢀⣰⠞⠟⠙⢻⣷⣿⣸⣷⣾⣟⣺⣽⣟⣻⣿⣿⣿⣿⣿⣿⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣷⣯⣿⣽⣳⢿⠃⠀⠀⢀⠀⢠⣤⣦⣄⣇⠉⠛⠛⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠻⣿⣿⣿⣿⣿⣉⠉⠉⠻⠀⠀⠠⢀⣾⢿⠋⢁⣿⣿⠀⠀⠀⠀⣿⣧⠙⢿⣹⣏⢠⣛⠟⠁⠀⠀⢀⣴⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠿⣿⣿⣿⣓⣈⣰⣦⣤⣀⣼⠋⠀⠀⢭⣽⣿⡇⠀⣀⣀⣿⣿⡇⡸⣿⣿⡤⠉⠒⠤⣀⠀⠠⡄⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⢹⠏⠀⠛⣞⣧⣾⠍⠢⣀⠀⠈⠻⠟⣇⢉⣡⡶⣭⠯⡀⠐⠛⠙⢇⠀⠐⢲⠏⠀⠀⠈⠲⠞⠀⠀⠀⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⠁⢀⠄⠂⢸⠛⠁⣠⣲⡆⢔⠾⠋⠀⠈⠢⣉⠀⢀⣀⣈⡆⠀⠀⢸⣀⠔⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠚⠤⣌⡁⠀⠀⠈⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⡿⠀⠀⣜⣩⠟⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⣛⡉⠀⠀⠓⢄⡀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⡹⠋⠀⣠⠞⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠐⠒⠚⣿⣶⠦⣄⣀⡀⠘⠿⠽⠶⢾⣷⣀⠖⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣀⡀⣀⣀⣠⡿⠍⣛⠻⡿⠿⣟⣲⣶⣶⡶⠿⣿⣖⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠼⠛⢻⠿⠻⢿⣿⣷⣿⣶⣆⠬⡯⣑⣿⣿⣿⣿⣹⣍⣧⣾⠈⠉⠉⠒⠒⠠⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢠⠁⢡⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠋⠀⠀⠐⠒⠠⣔⠁⠀⠉⣿⣿⣿⢛⡖⠾⠿⢿⡿⠿⣾⠟⠁⠀⠀⠀⠀⠀⠸⠀⠱⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⢢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⡅⠀⠀⠀⠀⠀⠀⠀⠉⠒⠄⠘⢿⣿⠇⠈⠁⠒⠺⣤⣢⡼⠀⠀⠀⠀⠀⠀⠀⠸⠀⠀⠘⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠣⡀⠀⠀⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠹⡄⠐⠒⠠⠤⠀⣀⠀⠀⠀⠀⠈⣏⠀⠀⠀⠀⠀⠈⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⢆⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠑⣄⠜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠁⠀⠘⣆⠀⠀⠀⠀⠀⠉⠑⠢⡀⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⠀⠀⠈⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠁⠀⠀⠀⠈⢣⡀⠠⢄⣀⠀⠀⠀⢠⠞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠧⣀⣀⠀⢀⡤⠋⠀⠀⠀⠀⠈⢁⠒⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⢀⣠⢾⡍⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠆⠈⢂⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠞⣻⡿⠏⠀⠀⠀⠐⠢⠄⢀⡀⣰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡷⠖⠋⣁⡼⣇⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⡀⢀⡎⠀⠀⠀⢳⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡔⠍⠀⠀⠈⠢⣀⠀⠀⠀⡰⢠⡇⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣇⡴⠋⠁⠁⢹⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⢄⠀⡴⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⢧⠄⠂⡄⠀⠀⠀⠀⠁⠢⢴⣁⡼⠀⠀⠀⠈⠑⠂⠀⠤⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣧⣀⠤⠖⠉⠀⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠇⢠⠀⠀⠀⠑⠤⡀⠀⠀⡐⠁⢰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡏⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠈⢆⠀⠀⠀⠀⠀⢑⠞⠤⣠⣇⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⡠⠤⢤⢤⠴⠃⠀⡀⠔⠊⠀⠠⢹⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢺⠀⠀⠀⠣⡀⠀⠀⡤⠃⠠⣼⠃⢳⠈⠉⠉⣍⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⡜⢸⢀⡔⠉⠀⢀⡠⢔⠊⠉⠻⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡦⡀⠀⠀⠈⠑⠺⠤⣴⠟⠃⠀⠸⡆⠐⠀⢸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⠀⠀⢀⠃⢸⡃⣇⠀⡰⠟⠂⠁⠀⠀⠀⠙⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢄⠀⠀⠀⠈⠺⠦⣄⣠⠤⠴⠊⠉⠀⠀⠀⡼⠁⠀⠐⢸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⠀⠀⠀⢸⠀⢸⣇⠞⠉⠀⠀⠀⠀⢀⡠⠐⠀⠈⢣⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠈⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⢿⣁⠀⠈⢀⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡈⢀⠀⠀⠰⠀⢸⠹⡄⠀⠀⢀⡠⠒⠁⠀⠀⠀⡠⠀⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢜⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⠋⠀⠈⠉⠓⠦⠄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡯⠀⠀⠀⣆⣼⡆⢙⣤⡐⠁⠀⠀⠀⡠⠔⠉⠀⠀⠀⠹⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢂⡠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⢾⠁⠉⠢⢄⡀⠀⠀⠀⠀⠈⠉⠁⠐⠒⠒⠒⠒⠒⠚⠓⠀⠈⠉⠀⠀⢧⠀⠘⢷⣀⡠⠔⠉⠀⠀⠀⠀⢀⠠⠀⠱⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠚⡱⠁⠀⠀⠀⠀⠈⠁⠒⠠⠤⢀⣀⣀⢀⠀⡀⢀⢀⡀⠀⠀⣀⡠⠔⠒⠂⠙⣆⠀⠀⠙⣦⠀⠀⠀⢀⠄⠊⠁⠀⠀⡀⠘⣄⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠜⢡⠊⠀⠀⠀⠀⠀⠀⠀⣰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠰⡄⠀⠹⡄⠀⠀⠀⠳⡄⠐⠁⠀⠀⢀⠔⠉⠀⠀⠈⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠋⡔⠁⠀⠀⠀⠀⠀⠀⠀⣰⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⠀⠀⠀⠀⠀⠀⠀⠀⣷⠀⠀⠹⡄⠀⠀⠀⠈⢷⣀⡠⠚⠁⠀⠀⢀⠄⠢⡀⠣⣀⠀⠀⠀⢀⣀⣤⣤⣄⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⢁⠎⠀⠀⠀⠀⠀⠀⠀⠀⢰⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⡄⣹⡄⠀⠀⠀⠀⠀⠀⠀⡇⡆⠀⠀⢳⠀⠀⠀⠀⠈⠙⢵⠀⠀⢀⠕⢁⠖⡠⠁⠀⠉⡖⠚⠉⠩⢿⡟⣿⣭⣷⣄⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⡘⠘⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡘⢡⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⡎⡘⠀⠀⠀⠀⠀⠀⠀⠀⠀⣜⢣⠀⠀⠀⠀⠀⠀⠀⢹⠸⡀⠀⠐⢇⠀⠀⠀⠀⠀⠀⠑⢶⡁⠀⢸⡔⠁⠀⢠⠃⢁⠀⠀⠀⠒⣿⡽⣶⢾⣿⣷⣄⠀
+⠀⠀⠀⠀⠀⠀⢰⠇⠀⠸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⢣⠇⡄⠀⠀⠀⠀⠀⠀⠀⠀⢸⢠⠇⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⢸⠀⠀⠀⠀⠀⠀⠀⠸⠀⡇⠀⠀⠸⡆⠀⠀⠀⠀⠀⠀⠘⢿⣦⣾⠀⠀⠀⡇⠀⢸⠀⠀⠀⠀⢸⣿⣷⣿⡿⣿⣿⣧
+⠀⠀⠀⠀⠀⠀⢎⠀⠀⠀⡷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⡌⡘⠀⠀⠀⠀⠀⠀⠀⠀⠀⡸⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⡇⠀⠀⠄⠀⠀⠀⠀⡇⢸⠀⠀⠀⢳⠀⠀⠀⠀⠀⠀⠀⠀⠹⣴⠀⠀⡜⠀⠀⢘⣲⣄⣀⣈⣸⠿⢿⣯⣿⣽⣞⣿
+⠀⠀⠀⠀⠀⠀⠀⢣⠀⡴⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠏⡸⢠⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⡸⢰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡀⡇⠀⠀⠀⠀⠀⠀⠀⢸⠈⡇⠀⠀⠈⢇⠀⠀⠀⠀⠀⠀⠀⠀⠸⠓⣜⠂⠀⣴⣿⣿⣷⣾⣯⣿⣦⠈⠉⠛⠻⠞⠉
+⠀⠀⠀⠀⠀⠀⠀⠀⠙⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣄⡇⢜⡀⠤⣀⠀⠀⠀⠀⠀⠀⠀⡇⢓⠨⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡀⣇⠀⠀⠀⠀⠀⠀⠀⠈⡆⢥⠀⠀⠀⠘⡆⠀⠀⠀⠀⠀⠀⠀⠨⠀⠀⠓⢦⢿⣿⣿⣾⣷⣿⣿⡿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠦⣀⠈⠑⠀⠦⠤⠄⠀⠀⠀⠀⣇⣽⠀⠀⠄⠀⠀⠀⠀⠀⠀⠒⠈⢸⠂⡏⠀⠠⠀⠀⠀⠀⠐⠀⠇⢸⠄⣀⣀⠀⠘⡄⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠒⣶⠤⠤⠤⠤⠤⠶⠖⠛⠉⠲⠤⣄⣀⣀⣀⢀⣀⣀⣤⣤⣼⣿⣧⣈⠉⠐⠒⠂⠀⠀⠀⢸⡻⠦⠤⣤⠤⠖⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣹⡀⠀⢠⣀⣤⠴⠖⠛⠋⠉⠉⠉⣩⡥⠬⠥⣬⣉⣹⡏⠉⠉⠉⠉⠉⠉⠒⠒⠒⠚⠿⠥⢤⣀⡀⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠩⡗⠚⠉⣀⠠⠤⠒⠒⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠉⠉⠉⠉⠁⠉⠁⠀⠀⠀⠒⠤⢩⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢳⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢳⠐⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⢰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠉⡄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠛⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠠⡟⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠃⠀⠘⡄⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠋⢸⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⢨⡇⠀⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀⢈⡰⢯⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⡇⠀⠀⠀⢹⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠴⠋⠀⢀⣸⣄⠇⠈⠢⢄⠀⠀⠀⠀⠀⠀⠀⠀⠠⠁⢸⢧⠀⠀⠀⠀⠀⠀⡀⠀⠀⢀⠔⠁⠊⠁⠈⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⡄⠀⣠⠋⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠀⢠⡤⠖⠋⠁⠀⠀⠠⢀⡿⠉⠙⠢⠤⠀⣉⠒⠤⣀⠀⠀⠀⠀⠀⠀⡿⢸⡀⠀⠀⠀⠀⠀⡀⠠⢖⠍⠀⠀⠀⠀⠀⠀⠻⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣤⠃⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠤⠓⠋⠀⠀⠀⡀⠤⠀⠂⣠⠞⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠁⠀⠀⠀⠀⢠⠇⣈⣇⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⢀⠠⠂⠀⡄⠹⡀⠀⠀⠀⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡠⠖⠋⠀⠀⠀⠀⠀⠈⢀⠀⠠⠐⡴⢡⠂⠁⠂⠤⣤⣀⠀⠀⠀⠈⠢⠀⠀⠀⠀⠀⡼⠀⣼⢹⡀⠀⠀⠀⠀⢀⡠⠤⠏⠁⠀⠀⠀⠀⠀⣰⠀⢷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠔⠋⠀⠀⠀⠀⠀⠀⡀⠁⠀⠂⠀⠄⡜⢀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠉⠂⠲⡄⠤⠀⢠⡼⠁⢀⡟⠀⣧⠐⠒⠒⠽⠋⠁⠀⠀⠀⠀⡠⠤⠎⠁⠁⠀⠸⡀⠀⠀⠀⡀⠀⡠⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠄⠀⡀⠁⢀⠂⡸⠀⠀⠈⠒⢤⡀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⢀⡾⠁⣾⣸⠁⠀⡟⡆⠀⠀⡠⠖⠒⠚⠉⠉⠀⠀⠀⠀⠀⠀⠀⢀⡇⠀⠀⠀⢀⠝⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⡴⠁⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠐⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠉⠓⠢⢤⣀⢠⣃⣀⢀⡞⢁⡼⠛⠃⠀⣱⠁⢻⠈⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠒⠀⡇⠀⠀⡠⠋⠈⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢠⣎⣠⡶⠗⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠁⠠⠈⢰⡇⠉⠂⢄⡀⠀⠀⠀⠀⠀⠀⠀⢁⠂⠀⢀⡟⠠⠞⠀⠠⡄⣱⠃⠀⠈⣇⣀⣀⡤⠆⠂⠂⠂⠂⠒⠉⠁⠁⠀⠀⠀⡇⢀⠎⠀⠀⠀⠀⠀⠁⠀⢠⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢚⣷⡾⠁⠀⠀⠀⠀⠀⠀⢀⠀⠀⠁⠠⠈⠀⠄⢸⣇⠀⠀⠀⠀⠁⠂⠠⢀⠀⠀⠀⠎⠀⢀⡞⠀⠠⠀⠂⣽⣻⠃⠀⠀⠀⠘⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⡠⠚⠀⣧⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣠⢾⣿⠇⠀⠀⠀⠀⠀⠀⢀⠀⠀⠈⠀⠄⠐⠀⠠⢸⠁⠑⠤⢀⣀⠀⠀⠀⠀⠀⠀⠉⠀⢀⡏⠀⠐⠀⣡⢾⡟⠁⠀⠀⠀⠀⠀⠻⡄⠀⠀⠀⠀⣀⡤⠔⠋⠉⠀⠀⠀⠀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⢠⠎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⣰⠃⣯⢾⠀⢀⣴⡟⠀⠀⠀⠀⡀⠈⠀⠄⠀⠂⠈⢀⢸⠀⠀⠀⠀⠀⠀⠁⠑⠢⣀⡀⠀⢠⠟⠀⣈⣤⠞⠁⠈⠀⠀⠀⠀⠀⠀⠀⠀⢳⠐⠒⠊⠉⠀⠀⠀⠀⠀⠀⠀⢀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⣰⠃⠀⣷⣿⣴⣟⡿⠁⠀⠀⣀⣁⠀⠀⠐⠀⡈⠀⢁⠀⣼⠄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⣎⣠⠖⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧⠀⠀⠀⠀⢀⣀⣀⡀⠤⠂⠁⢠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢠⠃⠀⠀⠉⢁⣼⡿⢶⣞⡿⣿⣿⡏⠀⠈⡀⠐⠀⢈⠀⣼⢹⠦⠀⠁⠂⠤⣀⠀⠀⠀⠀⠀⡾⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠚⣏⠁⠉⠉⠀⠀⠀⠀⠀⠀⠀⣸⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⡞⠀⠀⠀⠀⠞⠛⠛⠉⢁⣿⡿⣿⠁⣀⡐⢂⠄⢈⡆⢠⠇⣼⠀⠀⠀⠀⠀⠀⠀⠉⠐⠀⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡄⠀⠀⠀⠀⠀⣀⡤⠄⠊⠹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣼⡟⠁⢃⣤⣿⣷⠋⠐⣿⠈⠁⠀⠀⠀⠀⠀⠀⠀⡸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡒⠋⠉⠉⠉⠁⠀⠀⠀⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡿⢋⣿⢁⣴⣾⣿⣿⣟⣠⠟⡏⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠀⠀⠀⢀⡀⠠⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⡏⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠘⣯⣼⣿⠟⣿⣿⠟⠁⣸⠁⠒⠠⢀⡀⠀⠠⠈⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣸⡧⠖⠒⠒⠁⠉⠁⠀⠀⢻⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣧⠀⣴⡇⠀⢰⠀⠀⠀⢀⠀⡜⠀⠀⠹⡏⢁⣴⠛⠁⠀⢠⠇⠀⠀⠀⠀⠀⠜⠁⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⣧⢹⣒⣒⠶⠶⢦⡤⠝⠛⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢹⠞⢠⡁⠀⢷⠀⠀⢀⠎⠸⠀⠀⠀⢀⣴⠋⠁⠀⠀⢀⠏⠈⠉⠀⠀⢀⣀⠀⠤⠐⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠈⠸⡇⠀⠈⠆⢀⠇⠀⠁⠀⣼⢠⡞⡁⠀⠀⠀⢀⠏⠀⠀⠀⠚⠛⠂⠀⠀⠀⢀⡞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⣀⠀⠀⢀⣀⣀⣀⣀⠠⠄⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠹⡄⠀⠈⠚⠂⠀⠀⣴⣿⡎⠀⠀⠀⠀⠀⡞⠀⠀⠐⠒⠐⠀⠀⠀⠀⠈⠀⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠧⠀⠀⠀⠀⠀⠀⠀⠀⠀⡂⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠙⢄⠀⠀⠀⠀⠀⡇⠈⠀⠀⠀⠀⠀⠈⢳⠀⠀⠀⠀⢀⠀⠀⠤⠄⠒⠂⠨⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠙⠢⢤⣀⡀⢳⢀⣀⣠⠤⠤⠤⠤⠬⡇⠒⠈⠉⠀⠀⠀⠀⠀⠀⢀⠀⠘⣆⢀⣀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣠⠤⠂⠈⠙⠁⡀⠄⢂⠐⡀⠆⠐⣻⠀⠀⢀⡀⠄⠐⠂⠉⢀⣀⣀⣠⣼⣦⣤⣂⠐⠐⡈⠐⢂⠁⠒⠠⢁⠂⠌⢉⠑⢦⠀⣠⠤⠴⠾⢲⠶⠶⠤⠤⢤⣀⣀⠒⠀⠤⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠳⠤⣌⣌⣠⠁⡐⠈⠄⢂⠐⡈⠄⣹⡖⠀⣀⣠⣦⣶⣿⣿⣭⣽⣶⣷⣽⣶⣬⣭⡳⣥⠀⠡⠀⠌⠠⢁⠂⠌⡀⠂⠌⢀⣾⣥⣶⣶⣿⣿⢿⡿⣿⣿⣿⣿⣮⣽⣿⣶⣄⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡤⠌⠐⡀⢂⠐⠠⢈⣷⣿⣿⣿⣟⡿⣽⣻⣿⣟⡷⣯⣟⣿⣿⣟⣿⣿⠇⠠⢁⠈⡐⠠⠈⠄⠠⢁⠂⣼⣿⣯⣷⣻⣿⣽⢯⣟⣷⣿⣟⣾⣽⣻⣟⡿⣿⡧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠦⣌⡐⢀⠂⡈⠐⡀⠻⣿⣿⣿⣾⣿⣿⣽⣯⣿⣟⣷⣿⣾⣿⣿⣿⡿⠀⡁⠂⡐⠠⠁⠌⠠⠁⠂⠄⡈⢿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣾⣷⣿⣾⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠑⠒⠃⠐⠤⠀⠙⠛⠿⠿⣿⣿⣿⣿⠿⠿⠟⠛⢋⠉⡀⠄⢂⠐⠠⠐⠠⠁⠌⠠⠁⠌⠠⠐⡀⠈⠉⠛⠛⠟⠻⠟⠟⠻⠛⠛⠛⠛⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠀⠒⠐⠒⠂⠂⠂⠑⠀⠃⠈⠀⠃⠈⠀⠁⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+]]--
+
+loadstring(game:HttpGet("https://pastebin.com/raw/j7Kfrx3H"))()
+
+
+local repo = "https://raw.githubusercontent.com/deividcomsono/Obsidian/main/"
+local Library = loadstring(game:HttpGet(repo .. "Library.lua"))()
+local ThemeManager = loadstring(game:HttpGet(repo .. "addons/ThemeManager.lua"))()
+local SaveManager = loadstring(game:HttpGet(repo .. "addons/SaveManager.lua"))()
+local Lighting = game:GetService("Lighting")
+local predictionEnabled = false
+local predictionMultiplier = 0.1 --predict ahead
+local Drawing = Drawing
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local Camera = workspace.CurrentCamera
+local LocalPlayer = Players.LocalPlayer
+local character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local HttpService = game:GetService("HttpService")
+local highlights = {}
+local boxesEnabled = false
+local ESPStorage = {}
+local crosshairGap = 0
+local spinEnabled = false
+local spinSpeed = 0
+local spinAngle = 0
+local originalProps = {}
+local originalClothing = {}
+local originalFace = nil
+local selectedMaterialName = "Neon"
+local spinEnabled = false
+local spinSpeed = 0
+local spinAngle = 0
+local dt = RunService.RenderStepped:Wait()
+local active = false
+local swaySpeed = 3
+local swayAngleMax = 35
+local smoothSpeed = 8
+local swayTime = 0
+local originalCFrame = nil
+local lastLookDir = nil
+local hrp = character:WaitForChild("HumanoidRootPart")
+local EnableAA = false
+local AntiAimType = "Spinbot" -- default, will be overwritten by dropdown
+local AntiAimSpeed = 5
+local mouseOverrideAmount = 50
+local pingMs = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue()
+local pingSec = pingMs / 1000
+
+
+
+
+
+-- List of weapon names
+local weapons = {
+    "[Glock]", "[Silencer]", "[AR]", "[TacticalShotgun]", "[P90]",
+    "[AUG]", "[SMG]", "[Shotgun]", "[RPG]", "[Double-Barrel SG]",
+    "[Flamethrower]", "[GrenadeLaucher]", "[Revolver]", "[Grenade]",
+    "[LMG]", "[AK47]", "[DrumGun]", "[SilencerAR]"
+}
+
+local MaterialMap = {
+    Neon = Enum.Material.Neon,
+    ForceField = Enum.Material.ForceField,
+    ["Smooth Plastic"] = Enum.Material.SmoothPlastic,
+}
+
+
+
+-- UI state
+local gunMaterialEnabled = false
+local selectedMaterial = Enum.Material.Neon
+
+local originalWeaponData = {}
+
+local Settings = {
+    Enable2DBoxes = false,
+    EnableHealth = false,
+    PlayerTracers = false,
+    EnableName = false,
+}
+
+
+local Options = Library.Options
+local Toggles = Library.Toggles
+
+Library.ForceCheckbox = false
+Library.ShowToggleFrameInKeybinds = true
+
+Library:Notify("ESP is broken with aspect ratio, we are working to fix this.", 5)
+
+local Window = Library:CreateWindow({
+    Title = "softaim",
+    Footer = "Beta Build, v1.0.0",
+    ToggleKeybind = Enum.KeyCode.RightControl,
+    Center = true,
+    AutoShow = true
+})
+
+local Tabs = {
+    Main = Window:AddTab("Legitbot", "user"),
+    Ragebot = Window:AddTab("Ragebot", "skull"),
+    Misc = Window:AddTab("Misc", "circle-question-mark"),
+    Visuals = Window:AddTab("Visuals", "eye"),
+    Players = Window:AddTab("Players", "telescope"),
+    World = Window:AddTab("World", "earth"),
+    Fun = Window:AddTab("Fun", "party-popper"),
+    ["UI Settings"] = Window:AddTab("UI Settings", "settings"),
+}
+
+local LeftGroupBox = Tabs.Main:AddLeftGroupbox("Aimbot", "boxes")
+
+-- === Drawing Circle ===
+local fovCircle = Drawing.new("Circle")
+fovCircle.Visible = false
+fovCircle.Color = Color3.fromRGB(255, 255, 255)
+fovCircle.Thickness = 2
+fovCircle.NumSides = 100
+fovCircle.Filled = false
+fovCircle.Transparency = 1
+
+-- === State ===
+local aimbotEnabled = false
+local selectedHitboxes = { "Head" }
+local lockedTarget = nil
+local aimbotKey = Enum.KeyCode.E
+
+-- === Helper Functions ===
+local function updateSelectedHitboxes(values)
+    selectedHitboxes = {}
+    for name, isSelected in pairs(values) do
+        if isSelected then
+            table.insert(selectedHitboxes, name)
+        end
+    end
+    if #selectedHitboxes == 0 then
+        table.insert(selectedHitboxes, "Head")
+    end
+end
+
+local function getMoveDirection()
+    local character = LocalPlayer.Character
+    local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local moveDir = humanoid.MoveDirection
+        if moveDir.Magnitude > 0 then
+            return moveDir.Unit
+        end
+    end
+    local look = Camera.CFrame.LookVector
+    return Vector3.new(look.X, 0, look.Z).Unit
+end
+
+if not getgenv()._originalLighting then
+	getgenv()._originalLighting = {
+		Brightness = Lighting.Brightness,
+		Ambient = Lighting.Ambient,
+		OutdoorAmbient = Lighting.OutdoorAmbient,
+		FogEnd = Lighting.FogEnd,
+		FogStart = Lighting.FogStart,
+		GlobalShadows = Lighting.GlobalShadows,
+	}
+end
+
+local UserInputService = game:GetService("UserInputService")
+
+
+
+local function saveOriginal(part)
+    local key = part:GetFullName()
+    if not originalWeaponData[key] then
+        originalWeaponData[key] = {
+            Part = part,
+            Material = part.Material,
+            Color = part.Color,
+            TextureID = part.TextureID,
+        }
+    end
+end
+
+
+LocalPlayer.CharacterAdded:Connect(function(char)
+    Character = char
+    HRP = char:WaitForChild("HumanoidRootPart")
+end)
+
+local function restoreOriginalWeapons()
+    for key, data in pairs(originalWeaponData) do
+        local part = data.Part
+        if part and part:IsDescendantOf(game) then
+            part.Material = data.Material
+            part.Color = data.Color
+            part.TextureID = data.TextureID
+        end
+    end
+    originalWeaponData = {}
+end 
+
+
+-- Restore lighting to default
+local function resetLighting()
+	for k, v in pairs(getgenv()._originalLighting) do
+		Lighting[k] = v
+	end
+end
+
+local function getTargetHitbox(Character)
+    for _, name in ipairs(selectedHitboxes) do
+        local part = Character:FindFirstChild(name)
+        if part then return part end
+    end
+    return nil
+end
+
+
+
+local function isTargetVisible(part, Character)
+    if not part then return false end
+    local origin = Camera.CFrame.Position
+    local direction = (part.Position - origin)
+
+    local rayParams = RaycastParams.new()
+    rayParams.FilterDescendantsInstances = {LocalPlayer.Character}
+    rayParams.FilterType = Enum.RaycastFilterType.Blacklist
+    rayParams.IgnoreWater = true
+
+    local result = workspace:Raycast(origin, direction, rayParams)
+    return not result or result.Instance:IsDescendantOf(Character)
+end
+
+local function isTargetValid(player)
+    if not (player and player.Character and player.Character:FindFirstChild("Humanoid") and player.Character.Humanoid.Health > 0) then
+        return false
+    end
+
+    if Toggles.Wallcheck and Toggles.Wallcheck.Value then
+        local hitbox = getTargetHitbox(player.Character)
+        if not isTargetVisible(hitbox, player.Character) then
+            return false
+        end
+    end
+
+    return true
+end
+
+local HorizontalLine = Drawing.new("Line")
+local VerticalLine = Drawing.new("Line")
+
+
+
+--== Crosshair State Defaults ==--
+local HorizontalLineLeft = Drawing.new("Line")
+local HorizontalLineRight = Drawing.new("Line")
+local VerticalLineUp = Drawing.new("Line")
+local VerticalLineDown = Drawing.new("Line")
+
+local crosshairEnabled = false
+local crosshairLength = 20
+local crosshairWidth = 2
+local crosshairColor = Color3.fromRGB(255, 255, 255)
+local crosshairTransparency = 0
+local useMouse = false                
+
+local function worldToScreen(worldPos)
+    local screenPos3, onScreen = Camera:WorldToViewportPoint(worldPos)
+    -- Make sure the point is in front of the camera, Z > 0
+    if screenPos3.Z > 0 then
+        return Vector2.new(screenPos3.X, screenPos3.Y), onScreen
+    else
+        return Vector2.new(-1000, -1000), false
+    end
+end
+
+
+
+local CoreGui = game:GetService("CoreGui")
+
+local AimGui
+
+-- Create a hidden folder in CoreGui to store disabled crosshair
+local SafeFolder = CoreGui:FindFirstChild("AimStorage")
+if not SafeFolder then
+    SafeFolder = Instance.new("Folder")
+    SafeFolder.Name = "AimStorage"
+    SafeFolder.Parent = CoreGui
+end
+
+-- Move Aim GUI to safe storage
+local function hideGunCrosshair()
+    if not AimGui then
+        AimGui = player:FindFirstChild("PlayerGui")
+            and player.PlayerGui:FindFirstChild("Menu")
+            and player.PlayerGui.Menu:FindFirstChild("Main")
+            and player.PlayerGui.Menu.Main:FindFirstChild("Aim")
+    end
+
+    if AimGui then
+        AimGui.Parent = SafeFolder
+    end
+end
+
+-- Move it back to original location
+local function showGunCrosshair()
+    if AimGui and AimGui.Parent == SafeFolder then
+        AimGui.Parent = player.PlayerGui.Menu.Main
+    end
+end
+
+
+
+if Drawing == nil then
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Crosshair Error";
+        Text = "Drawing API not supported by this executor.";
+        Duration = 5;
+    })
+    return
+end
+
+function createESPBoxesForExistingPlayers()
+    -- Clear old ESP if needed
+    for _, drawings in pairs(ESPStorage) do
+        for _, drawing in pairs(drawings) do
+            drawing:Remove()
+        end
+    end
+    ESPStorage = {}
+
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player ~= LocalPlayer then
+            setupESPForPlayer(player)
+        end
+    end
+end
+
+
+local function setupESP(player)
+    if player == LocalPlayer or ESPStorage[player] then return end
+
+    local box = Drawing.new("Square")
+    box.Color = Color3.fromRGB(255, 255, 255)
+    box.Thickness = 1
+    box.Filled = false
+    box.Visible = false
+
+    local tracer = Drawing.new("Line")
+    tracer.Color = Color3.fromRGB(255, 255, 255)
+    tracer.Thickness = 1
+    tracer.Visible = false
+
+    local nameText = Drawing.new("Text")
+    nameText.Size = 16
+    nameText.Color = Color3.fromRGB(255, 255, 255)
+    nameText.Outline = true
+    nameText.Center = true
+    nameText.Visible = false
+
+    ESPStorage[player] = {
+        Box = box,
+        Tracer = tracer,
+        Name = nameText,
+    }
+end
+
+for _, player in pairs(Players:GetPlayers()) do
+    if player ~= LocalPlayer then
+        setupESP(player)
+    end
+end
+
+
+Players.PlayerAdded:Connect(setupESP)
+Players.PlayerRemoving:Connect(function(player)
+    local data = ESPStorage[player]
+    if data then
+        for _, obj in pairs(data) do obj:Remove() end
+        ESPStorage[player] = nil
+    end
+end)
+
+local function getNearestTarget()
+    local mousePos = UserInputService:GetMouseLocation()
+    local closestPlayer, shortestDistance = nil, math.huge
+    local maxFOV = Options.FOVAmount and Options.FOVAmount.Value or 100
+
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player ~= LocalPlayer and isTargetValid(player) then
+            local root = player.Character:FindFirstChild("HumanoidRootPart")
+            if root then
+                local screenPos, onScreen = Camera:WorldToViewportPoint(root.Position)
+                if onScreen then
+                    local dist = (Vector2.new(screenPos.X, screenPos.Y) - mousePos).Magnitude
+                    if dist < shortestDistance and dist <= maxFOV then
+                        closestPlayer, shortestDistance = player, dist
+                    end
+                end
+            end
+        end
+    end
+
+    return closestPlayer
+end
+
+local cursorWatermark = Drawing.new("Text")
+cursorWatermark.Text = "softaim"
+cursorWatermark.Size = 18
+cursorWatermark.Color = Color3.fromRGB(255, 255, 255) -- white
+cursorWatermark.Transparency = 1
+cursorWatermark.Position = Vector2.new(0, 0)
+cursorWatermark.Visible = false
+cursorWatermark.Center = true
+cursorWatermark.Outline = true
+
+local watermarkEnabled = false
+
+local function SetPlayerMaterial(material)
+    if not LocalPlayer.Character then return end
+
+    for _, part in pairs(LocalPlayer.Character:GetDescendants()) do
+        if part:IsA("BasePart") then
+            part.Material = Enum.Material[material]
+        end
+    end
+end
+
+
+local function setWatermarkEnabled(enabled)
+    watermarkEnabled = enabled
+    cursorWatermark.Visible = enabled
+end
+
+-- === Keybind for Aimbot Toggle ===
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+    if input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == aimbotKey then
+        aimbotEnabled = not aimbotEnabled
+
+        if aimbotEnabled and not lockedTarget then
+            lockedTarget = getNearestTarget()
+        end
+
+        if Toggles.AimbotToggle then
+            Toggles.AimbotToggle:SetValue(aimbotEnabled)
+        end
+    end
+end)
+
+
+-- === Walkspeed Variables ===
+local WalkspeedEnabled = false
+local WalkspeedValue = 16
+local walkspeedKey = Enum.KeyCode.V
+
+local function getHumanoid()
+    local char = LocalPlayer.Character
+    return char and char:FindFirstChildOfClass("Humanoid")
+end
+
+local function setWalkSpeedInstant(speed)
+    local humanoid = getHumanoid()
+    if humanoid then
+        humanoid.WalkSpeed = speed
+    end
+end
+
+LocalPlayer.CharacterAdded:Connect(function()
+    task.wait(1)
+    if WalkspeedEnabled then
+        setWalkSpeedInstant(WalkspeedValue)
+    else
+        setWalkSpeedInstant(16)
+    end
+end)
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+    if input.UserInputType == Enum.UserInputType.Keyboard then
+        if input.KeyCode == walkspeedKey then
+            if Toggles.Walkspeed then
+                Toggles.Walkspeed:SetValue(not Toggles.Walkspeed.Value)
+            end
+        end
+    end
+end)
+
+-- === Flight Variables and Functions ===
+local FlightEnabled = false
+local FlightKeybind = Enum.KeyCode.F
+local FlightSpeed = 50
+
+local BodyVelocity = nil
+local BodyGyro = nil
+
+local function startFlight()
+    local char = LocalPlayer.Character
+    if not char then return end
+
+    local hrp = char:FindFirstChild("HumanoidRootPart")
+    if not hrp then return end
+
+    BodyVelocity = Instance.new("BodyVelocity")
+    BodyVelocity.Velocity = Vector3.new(0, 0, 0)
+    BodyVelocity.MaxForce = Vector3.new(1e5, 1e5, 1e5)
+    BodyVelocity.Parent = hrp
+
+    BodyGyro = Instance.new("BodyGyro")
+    BodyGyro.MaxTorque = Vector3.new(1e5, 1e5, 1e5)
+    BodyGyro.P = 20e3
+    BodyGyro.Parent = hrp
+
+    FlightEnabled = true
+end
+
+local function stopFlight()
+    if BodyVelocity then
+        BodyVelocity:Destroy()
+        BodyVelocity = nil
+    end
+    if BodyGyro then
+        BodyGyro:Destroy()
+        BodyGyro = nil
+    end
+    FlightEnabled = false
+end
+
+-- === Input Handling for Flight Keybind toggle ===
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+    if input.UserInputType == Enum.UserInputType.Keyboard then
+        -- Flight key toggle
+        if input.KeyCode == FlightKeybind then
+            if FlightEnabled then
+                stopFlight()
+                if Toggles.Fly then
+                    Toggles.Fly:SetValue(false)
+                end
+            else
+                startFlight()
+                if Toggles.Fly then
+                    Toggles.Fly:SetValue(true)
+                end
+            end
+        end
+    end
+end)
+
+-- === Main Loop ===
+local highlights = {}
+local removedAppearance = {}
+
+getgenv().Resolution = {
+    ["resolution"] = 1 -- Adjust this value to stretch more or less
+}
+getgenv().res = nil
+
+_G.CrosshairColor = Color3.fromRGB(255, 255, 255)
+_G.CrosshairTransparency = 1
+_G.CrosshairVisible = true
+
+RunService.RenderStepped:Connect(function(dt)
+    -- === World Time Freeze ===
+    if freezeTime then
+        Lighting.TimeOfDay = string.format("%02d:00:00", freezeHour)
+    end
+
+    -- === Custom Crosshair ===
+    do
+        local visible = crosshairEnabled
+        HorizontalLine.Visible = visible
+        VerticalLine.Visible = visible
+
+        HorizontalLineLeft.Visible = visible
+        HorizontalLineRight.Visible = visible
+        VerticalLineUp.Visible = visible
+        VerticalLineDown.Visible = visible
+
+        if visible then
+            local size = crosshairLength
+            local thickness = crosshairWidth
+            local center = useMouse and UserInputService:GetMouseLocation() or (Camera.ViewportSize / 2)
+
+            HorizontalLine.Visible = false
+            VerticalLine.Visible = false
+
+            -- Update spin angle if enabled and speed > 0
+            if spinEnabled and spinSpeed > 0 then
+                local radiansPerSecond = spinSpeed * math.pi / 2  -- Adjust speed multiplier as needed
+                spinAngle = (spinAngle + radiansPerSecond * dt) % (2 * math.pi)
+            else
+                spinAngle = 0
+            end
+
+            -- Pre-calculate sin and cos for rotation
+            local cosA = math.cos(spinAngle)
+            local sinA = math.sin(spinAngle)
+
+            -- Function to rotate a point around center
+            local function rotatePoint(px, py)
+                local dx, dy = px - center.X, py - center.Y
+                local rx = dx * cosA - dy * sinA + center.X
+                local ry = dx * sinA + dy * cosA + center.Y
+                return Vector2.new(rx, ry)
+            end
+
+            -- Set properties & positions for each line
+            for _, line in pairs({HorizontalLineLeft, HorizontalLineRight, VerticalLineUp, VerticalLineDown}) do
+                line.Thickness = thickness
+                line.Color = crosshairColor
+                line.Visible = true
+            end
+
+            -- Calculate rotated positions
+
+            local hlFrom = rotatePoint(center.X - crosshairGap - size, center.Y)
+            local hlTo = rotatePoint(center.X - crosshairGap, center.Y)
+            HorizontalLineLeft.From = hlFrom
+            HorizontalLineLeft.To = hlTo
+
+            local hrFrom = rotatePoint(center.X + crosshairGap, center.Y)
+            local hrTo = rotatePoint(center.X + crosshairGap + size, center.Y)
+            HorizontalLineRight.From = hrFrom
+            HorizontalLineRight.To = hrTo
+
+            local vuFrom = rotatePoint(center.X, center.Y - crosshairGap - size)
+            local vuTo = rotatePoint(center.X, center.Y - crosshairGap)
+            VerticalLineUp.From = vuFrom
+            VerticalLineUp.To = vuTo
+
+            local vdFrom = rotatePoint(center.X, center.Y + crosshairGap)
+            local vdTo = rotatePoint(center.X, center.Y + crosshairGap + size)
+            VerticalLineDown.From = vdFrom
+            VerticalLineDown.To = vdTo
+
+        else
+            for _, line in pairs({HorizontalLine, VerticalLine, HorizontalLineLeft, HorizontalLineRight, VerticalLineUp, VerticalLineDown}) do
+                line.Visible = false
+            end
+        end
+    end
+
+    -- === FOV Circle ===
+    fovCircle.Visible = Toggles.FOVCircle and Toggles.FOVCircle.Value or false
+    if fovCircle.Visible then
+        local mousePos = UserInputService:GetMouseLocation()
+        fovCircle.Position = mousePos
+        fovCircle.Radius = Options.FOVAmount and Options.FOVAmount.Value or 100
+    end
+
+    -- === Aimbot ===
+    if aimbotEnabled then
+        if lockedTarget then
+            local char = lockedTarget.Character
+            local hum = char and char:FindFirstChildOfClass("Humanoid")
+
+            if not char or not hum or hum.Health <= 0 then
+                lockedTarget = nil
+                aimbotEnabled = false
+                if Toggles.AimbotToggle then
+                    Toggles.AimbotToggle:SetValue(false)
+                end
+            end
+        end
+
+
+        if Toggles.Highlight and Toggles.Highlight.Value then
+            for player, data in pairs(highlights) do
+                if player ~= lockedTarget or not player.Character then
+                    if data.lights then for _, light in pairs(data.lights) do light:Destroy() end end
+                    if data.highlight then data.highlight:Destroy() end
+                    highlights[player] = nil
+                end
+            end
+
+            if lockedTarget and lockedTarget.Character and not highlights[lockedTarget] then
+                local lights = {}
+                for _, part in ipairs(lockedTarget.Character:GetDescendants()) do
+                    if part:IsA("BasePart") then
+                        local light = Instance.new("PointLight")
+                        light.Color = Color3.fromRGB(255, 255, 255)
+                        light.Range = 4
+                        light.Brightness = 1.4
+                        light.Shadows = true
+                        light.Parent = part
+                        table.insert(lights, light)
+                    end
+                end
+
+                local hl = Instance.new("Highlight")
+                hl.FillColor = Color3.fromRGB(255, 255, 255)
+                hl.FillTransparency = 0.7
+                hl.OutlineColor = Color3.fromRGB(255, 255, 255)
+                hl.OutlineTransparency = 0.7
+                hl.Adornee = lockedTarget.Character
+                hl.Parent = lockedTarget.Character
+
+                highlights[lockedTarget] = {highlight = hl, lights = lights}
+            end
+        else
+            for player, data in pairs(highlights) do
+                if data.lights then for _, light in pairs(data.lights) do light:Destroy() end end
+                if data.highlight then data.highlight:Destroy() end
+            end
+            highlights = {}
+        end
+        if lockedTarget and lockedTarget.Character then
+            local char = lockedTarget.Character
+            local part = getTargetHitbox(char)
+
+            if part then
+                local visible = true
+                if Toggles.Wallcheck and Toggles.Wallcheck.Value then
+                    visible = isTargetVisible(part, char)
+                end
+
+                if visible then
+                    local targetPos = part.Position
+                    if AutoPredictionEnabled then
+                        local hrp = char:FindFirstChild("HumanoidRootPart")
+                        if hrp then
+                            local pingMs = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue()
+                            local pingSec = pingMs / 1000
+                            local boostFactor = 3 -- tweak if needed
+
+                            targetPos += hrp.Velocity * pingSec * boostFactor
+                        end
+                    end
+
+                    local camPos = Camera.CFrame.Position
+                    local ratio = (mouseOverrideAmount or 50) / 100
+                    local lockStrength = (ratio ^ 2) * 0.98
+
+                    Camera.CFrame = Camera.CFrame:Lerp(CFrame.new(camPos, targetPos), lockStrength)
+                end
+            end
+        end
+    else
+        for player, data in pairs(highlights) do
+            if data.lights then for _, light in pairs(data.lights) do light:Destroy() end end
+            if data.highlight then data.highlight:Destroy() end
+        end
+        highlights = {}
+    end
+
+    -- === Walkspeed Lock ===
+    local humanoid = getHumanoid()
+    if humanoid then
+        if WalkspeedEnabled and humanoid.WalkSpeed ~= WalkspeedValue then
+            humanoid.WalkSpeed = WalkspeedValue
+        elseif not WalkspeedEnabled and humanoid.WalkSpeed ~= 16 then
+            humanoid.WalkSpeed = 16
+        end
+    end
+
+    -- === Flight Movement ===
+    if FlightEnabled and BodyVelocity and BodyGyro then
+        local char = LocalPlayer.Character
+        if char then
+            local hrp = char:FindFirstChild("HumanoidRootPart")
+            if hrp then
+                local camCF = Camera.CFrame
+                local move = Vector3.zero
+                if UserInputService:IsKeyDown(Enum.KeyCode.W) then move += camCF.LookVector end
+                if UserInputService:IsKeyDown(Enum.KeyCode.S) then move -= camCF.LookVector end
+                if UserInputService:IsKeyDown(Enum.KeyCode.A) then move -= camCF.RightVector end
+                if UserInputService:IsKeyDown(Enum.KeyCode.D) then move += camCF.RightVector end
+                if UserInputService:IsKeyDown(Enum.KeyCode.Space) then move += Vector3.new(0, 1, 0) end
+                if UserInputService:IsKeyDown(Enum.KeyCode.LeftControl) then move -= Vector3.new(0, 1, 0) end
+
+                BodyVelocity.Velocity = move.Magnitude > 0 and move.Unit * FlightSpeed or Vector3.zero
+                BodyGyro.CFrame = CFrame.new(hrp.Position, hrp.Position + camCF.LookVector)
+            end
+        end
+    end
+    -- === Gun Material Logic ===
+    do
+        local char = LocalPlayer.Character
+        if char then
+            for _, weaponName in ipairs(weapons) do
+                local weapon = char:FindFirstChild(weaponName)
+                if weapon and weapon:FindFirstChild("Default") then
+                    local default = weapon.Default
+
+                    if gunMaterialEnabled then
+                        saveOriginal(default)
+                        default.Material = selectedMaterial
+                        default.Color = Color3.fromRGB(255, 255, 255)
+                        default.TextureID = ""
+                    end
+                end
+            end
+        end
+    end
+
+    -- === ESP Rendering ===
+    if espEnabled then
+        local viewportSize = Camera.ViewportSize
+        local screenCenter = Vector2.new(viewportSize.X / 2, viewportSize.Y)
+
+        for player, drawings in pairs(ESPStorage) do
+            local Character = player.Character
+            local humanoid = Character and Character:FindFirstChildOfClass("Humanoid")
+            local hrp = Character and Character:FindFirstChild("HumanoidRootPart")
+
+            if Character and humanoid and humanoid.Health > 0 and hrp then
+                local box3DSize = Vector3.new(2, 5, 1)
+                local halfSize = box3DSize / 2
+
+                local offsets = {
+                    Vector3.new(-halfSize.X,  halfSize.Y, -halfSize.Z),
+                    Vector3.new( halfSize.X,  halfSize.Y, -halfSize.Z),
+                    Vector3.new(-halfSize.X, -halfSize.Y, -halfSize.Z),
+                    Vector3.new( halfSize.X, -halfSize.Y, -halfSize.Z),
+                    Vector3.new(-halfSize.X,  halfSize.Y,  halfSize.Z),
+                    Vector3.new( halfSize.X,  halfSize.Y,  halfSize.Z),
+                    Vector3.new(-halfSize.X, -halfSize.Y,  halfSize.Z),
+                    Vector3.new( halfSize.X, -halfSize.Y,  halfSize.Z),
+                }
+
+                local screenPoints = {}
+                local onScreen = false
+
+                for _, offset in ipairs(offsets) do
+                    local worldPoint = hrp.Position + offset
+                    local screenPoint, visible = worldToScreen(worldPoint)
+                    if visible then onScreen = true end
+                    screenPoint = Vector2.new(
+                        math.clamp(screenPoint.X, 0, viewportSize.X),
+                        math.clamp(screenPoint.Y, 0, viewportSize.Y)
+                    )
+                    table.insert(screenPoints, screenPoint)
+                end
+
+                if onScreen then
+                    local minX, minY = math.huge, math.huge
+                    local maxX, maxY = -math.huge, -math.huge
+
+                    for _, sp in ipairs(screenPoints) do
+                        if sp.X < minX then minX = sp.X end
+                        if sp.Y < minY then minY = sp.Y end
+                        if sp.X > maxX then maxX = sp.X end
+                        if sp.Y > maxY then maxY = sp.Y end
+                    end
+
+                    local boxPos = Vector2.new(minX, minY)
+                    local boxSize = Vector2.new(maxX - minX, maxY - minY)
+
+                    -- Boxes
+                    if Settings.Enable2DBoxes then
+                        if not drawings.Box then
+                            drawings.Box = Drawing.new("Square")
+                            drawings.Box.Filled = false
+                            drawings.Box.Color = Color3.fromRGB(255, 255, 255)
+                            drawings.Box.Thickness = 1
+                        end
+                        if not drawings.BoxOutline then
+                            drawings.BoxOutline = Drawing.new("Square")
+                            drawings.BoxOutline.Filled = false
+                            drawings.BoxOutline.Color = Color3.new(0, 0, 0)
+                            drawings.BoxOutline.Thickness = 1
+                        end
+
+                        drawings.Box.Position = boxPos
+                        drawings.Box.Size = boxSize
+                        drawings.Box.Visible = true
+
+                        drawings.BoxOutline.Position = boxPos - Vector2.new(0.5, 0.5)
+                        drawings.BoxOutline.Size = boxSize + Vector2.new(1, 1)
+                        drawings.BoxOutline.Visible = true
+                    else
+                        if drawings.Box then drawings.Box.Visible = false end
+                        if drawings.BoxOutline then drawings.BoxOutline.Visible = false end
+                    end
+
+                    -- Name ESP on top of the box
+                    if Settings.EnableName then
+                        if not drawings.NameText then
+                            drawings.NameText = Drawing.new("Text")
+                            drawings.NameText.Center = true
+                            drawings.NameText.Outline = true
+                            drawings.NameText.Color = Color3.fromRGB(255, 255, 255)
+                            drawings.NameText.Font = 2
+                        end
+                        local minSize = 10
+                        local maxSize = 16
+                        local calculatedSize = math.clamp(boxSize.Y / 5, minSize, maxSize)
+                        drawings.NameText.Size = calculatedSize
+
+                        drawings.NameText.Text = player.Name
+                        -- Position name centered horizontally above the box, 5 pixels above
+                        drawings.NameText.Position = Vector2.new(
+                            boxPos.X + (boxSize.X / 2),
+                            boxPos.Y - 15
+                        )
+                        drawings.NameText.Visible = true
+                    else
+                        if drawings.NameText then
+                            drawings.NameText.Visible = false
+                        end
+                    end
+
+                    -- Health bar
+                    if Settings.EnableHealth then
+                        local healthPercent = math.clamp(humanoid.Health / humanoid.MaxHealth, 0, 1)
+                        local barWidth = 2
+                        local barHeight = boxSize.Y * healthPercent
+                        local barX = boxPos.X - barWidth - 2
+                        local barY = boxPos.Y + (boxSize.Y - barHeight)
+
+                        if not drawings.HealthBar then
+                            drawings.HealthBar = Drawing.new("Square")
+                            drawings.HealthBar.Filled = true
+                            drawings.HealthBar.Color = Color3.fromRGB(0, 255, 0)
+                        end
+                        if not drawings.HealthBarOutline then
+                            drawings.HealthBarOutline = Drawing.new("Square")
+                            drawings.HealthBarOutline.Filled = false
+                            drawings.HealthBarOutline.Color = Color3.new(0, 0, 0)
+                            drawings.HealthBarOutline.Thickness = 1
+                        end
+
+                        drawings.HealthBar.Position = Vector2.new(barX, barY)
+                        drawings.HealthBar.Size = Vector2.new(barWidth, barHeight)
+                        drawings.HealthBar.Visible = true
+
+                        drawings.HealthBarOutline.Position = Vector2.new(barX - 0.5, barY - 0.5)
+                        drawings.HealthBarOutline.Size = Vector2.new(barWidth + 1, barHeight + 1)
+                        drawings.HealthBarOutline.Visible = true
+                    else
+                        if drawings.HealthBar then drawings.HealthBar.Visible = false end
+                        if drawings.HealthBarOutline then drawings.HealthBarOutline.Visible = false end
+                    end
+
+                    -- Tracers
+                    if tracersEnabled then
+                        if not drawings.Tracer then
+                            drawings.Tracer = Drawing.new("Line")
+                            drawings.Tracer.Color = Color3.fromRGB(255, 255, 255)
+                            drawings.Tracer.Thickness = 1
+                        end
+
+                        local tracerStart = screenCenter
+                        local tracerEnd = boxPos + (boxSize / 2)
+
+                        drawings.Tracer.From = tracerStart
+                        drawings.Tracer.To = tracerEnd
+                        drawings.Tracer.Visible = true
+                    else
+                        if drawings.Tracer then drawings.Tracer.Visible = false end
+                    end
+                else
+                    -- Hide all if offscreen
+                    if drawings.Box then drawings.Box.Visible = false end
+                    if drawings.BoxOutline then drawings.BoxOutline.Visible = false end
+                    if drawings.HealthBar then drawings.HealthBar.Visible = false end
+                    if drawings.HealthBarOutline then drawings.HealthBarOutline.Visible = false end
+                    if drawings.Tracer then drawings.Tracer.Visible = false end
+                    if drawings.NameText then drawings.NameText.Visible = false end
+                end
+            else
+                -- Hide all if no valid Character or dead
+                if drawings.Box then drawings.Box.Visible = false end
+                if drawings.BoxOutline then drawings.BoxOutline.Visible = false end
+                if drawings.HealthBar then drawings.HealthBar.Visible = false end
+                if drawings.HealthBarOutline then drawings.HealthBarOutline.Visible = false end
+                if drawings.Tracer then drawings.Tracer.Visible = false end
+                if drawings.NameText then drawings.NameText.Visible = false end
+            end
+        end
+    else
+        -- Hide all when ESP disabled
+        for _, drawings in pairs(ESPStorage) do
+            if drawings.Box then drawings.Box.Visible = false end
+            if drawings.BoxOutline then drawings.BoxOutline.Visible = false end
+            if drawings.HealthBar then drawings.HealthBar.Visible = false end
+            if drawings.HealthBarOutline then drawings.HealthBarOutline.Visible = false end
+            if drawings.Tracer then drawings.Tracer.Visible = false end
+            if drawings.NameText then drawings.NameText.Visible = false end
+        end
+    end
+
+
+
+
+
+
+
+
+
+
+
+    -- === Aspect Ratio Vertical Stretch ===
+    if getgenv().res == nil and getgenv().Resolution and getgenv().Resolution[".gg/resolution"] then
+        local stretch = getgenv().Resolution[".gg/resolution"]
+        Camera.CFrame = Camera.CFrame * CFrame.new(0, 0, 0, 1, 0, 0, 0, stretch, 0, 0, 0, 1)
+    end
+
+    if cursorWatermark.Visible then
+        local mousePos = UserInputService:GetMouseLocation()
+        cursorWatermark.Position = Vector2.new(mousePos.X + 25, mousePos.Y + 10)
+    end
+
+    if antiSitEnabled then
+        local humanoid = getHumanoid()
+        if humanoid and humanoid.Sit then
+            humanoid.Sit = false
+        end
+    end
+    -- === Anti-Aim Logic ===
+    if EnableAA and hrp and AntiAimType then
+        local dt = task.wait() -- delta time
+
+        -- Movement smoothing
+        local moveDir = getMoveDirection()
+        if moveDir.Magnitude == 0 then
+            moveDir = hrp.CFrame.LookVector
+        end
+        moveDir = Vector3.new(moveDir.X, 0, moveDir.Z)
+        if moveDir.Magnitude == 0 then moveDir = Vector3.new(0,0,1) end
+        moveDir = moveDir.Unit
+
+        if not lastLookDir then
+            lastLookDir = moveDir
+        end
+        lastLookDir = lastLookDir:Lerp(moveDir, smoothSpeed * dt).Unit
+
+        -- Base CFrame (preserves position)
+        local baseCFrame = CFrame.new(hrp.Position, hrp.Position + lastLookDir)
+
+        -- Yaw offset
+        local yawOffset = 0
+
+        if AntiAimType == "Sway" then
+            swayTime = (swayTime or 0) + dt * AntiAimSpeed
+            local swayFrequency = 3 -- cycles/sec at speed=1
+            yawOffset = math.sin(swayTime * swayFrequency) * math.rad(swayAngleMax or 45)
+
+        elseif AntiAimType == "Spinbot" then
+            spinbotTime = (spinbotTime or 0) + dt * AntiAimSpeed
+            yawOffset = math.rad((spinbotTime * 360) % 360)
+
+        elseif AntiAimType == "Jitter" then
+            local jitterDelay = 0.05 / AntiAimSpeed -- lower = faster
+            if not lastJitterTime or tick() - lastJitterTime >= jitterDelay then
+                lastJitterTime = tick()
+                currentJitterAngle = math.rad(math.random(0, 360))
+            end
+            yawOffset = currentJitterAngle
+        end
+
+        -- Apply rotation only, preserve position
+        hrp.CFrame = CFrame.new(baseCFrame.Position) * CFrame.Angles(0, yawOffset, 0)
+
+    else
+        -- Reset state when AA is disabled
+        lastLookDir = nil
+        swayTime = 0
+        spinbotTime = 0
+        currentJitterAngle = nil
+        lastJitterTime = nil
+    end
+    if flingEnabled and hrp then
+        for _, target in pairs(Players:GetPlayers()) do
+            if target ~= player and target.Character and target.Character:FindFirstChild("HumanoidRootPart") then
+                local targetHRP = target.Character.HumanoidRootPart
+                if targetHRP.Anchored == false then
+                    -- Apply a strong continuous force toward the sky
+                    targetHRP.Velocity = Vector3.new(0, 500, 0) -- fling upward
+                end
+            end
+        end
+    end
+end)
+
+
+
+
+
+-- === UI Setup ===
+LeftGroupBox:AddToggle("AimbotToggle", {
+    Text = "Enable Aimbot",
+    Default = false,
+    Callback = function(val)
+        aimbotEnabled = val
+        if not val then
+            lockedTarget = nil
+        else
+            lockedTarget = getNearestTarget()
+        end
+    end,
+})
+
+LeftGroupBox:AddLabel("Keybind"):AddKeyPicker("AimbotKey", {
+    Default = "E",
+    SyncToggleState = true,
+    Mode = "Toggle",
+    Text = "Aimbot Key",
+    ChangedCallback = function(newKey)
+        aimbotKey = Enum.KeyCode[newKey] or Enum.KeyCode.E
+    end,
+})
+
+LeftGroupBox:AddCheckbox("FOVCircle", {
+    Text = "Show FOV Circle",
+    Default = false,
+    Callback = function(val)
+        fovCircle.Visible = val
+    end,
+})
+
+LeftGroupBox:AddSlider("FOVAmount", {
+    Text = "FOV Radius",
+    Default = 100,
+    Min = 20,
+    Max = 300,
+    Rounding = 0,
+    Callback = function(val)
+        fovCircle.Radius = val
+    end,
+})
+
+LeftGroupBox:AddDropdown("AimbotBones", {
+    Values = { "Head", "HumanoidRootPart" },
+    Default = { "Head" },
+    Multi = true,
+    Text = "Aimbot Hitboxes",
+    Callback = updateSelectedHitboxes,
+})
+
+LeftGroupBox:AddCheckbox("Wallcheck", {
+    Text = "Wall check",
+    Default = false,
+    Callback = function(val)
+        print("Wallcheck:", val)
+    end,
+})
+
+local AutoPredictionEnabled = false
+
+LeftGroupBox:AddCheckbox("AutoPrediction", {
+    Text = "AutoPrediction",
+    Default = false,
+    Callback = function(val)
+        AutoPredictionEnabled = val
+    end,
+})
+
+LeftGroupBox:AddCheckbox("Highlight", {
+    Text = "Highlight",
+    Default = false,
+    Callback = function(val)
+        
+    end,
+})
+
+
+
+LeftGroupBox:AddSlider("MOAmount", {
+    Text = "Smoothness",
+    Default = 50,
+    Min = 0,
+    Max = 100,
+    Rounding = 0,
+    Callback = function(val)
+        mouseOverrideAmount = val or 50
+    end,
+})
+
+
+
+local TriggerBox = Tabs.Main:AddRightGroupbox("Triggerbot", "target")
+
+TriggerBox:AddCheckbox("EnableTriggerbot", {
+    Text = "Enable Trigger",
+    Default = false,
+    Callback = function(val)
+        
+    end,
+})
+
+local Ragebot = Tabs.Ragebot:AddLeftGroupbox("Ragebot", "skull")
+
+Ragebot:AddCheckbox("EnableRagebot", {
+    Text = "Enable Ragebot",
+    Default = false,
+    Callback = function(val)
+        
+    end,
+})
+
+
+
+local AntiAims = Tabs.Ragebot:AddRightGroupbox("Anti-Aim", "person-standing")
+
+AntiAims:AddCheckbox("EnableAA", {
+    Text = "Enable Anti-Aim",
+    Default = false,
+    Callback = function(val)
+        EnableAA = val
+        if not EnableAA then
+            -- Reset HRP CFrame when disabled
+            if hrp and originalCFrame then
+                hrp.CFrame = originalCFrame
+            end
+        else
+            -- Update originalCFrame on enable to current position, avoid snapping
+            if hrp then
+                originalCFrame = hrp.CFrame
+                swayTime = 0
+                lastLookDir = nil
+            end
+        end
+    end,
+})
+
+local AntiAimSettings = AntiAims:AddDependencyBox()
+
+AntiAimSettings:AddDropdown("AntiAimType", {
+    Values = {"Spinbot", "Sway", "Jitter", "Custom"},
+    Default = 1,
+    Multi = false,
+    Text = "Anti-Aim type",
+    Callback = function(Value)
+        AntiAimType = Value
+    end
+})
+
+AntiAimSettings:AddSlider("AntiAimSpeed", {
+    Text = "Anti-Aim speed",
+    Default = 5,
+    Min = 1,
+    Max = 10,
+    Rounding = 0,
+    Callback = function(Value)
+        AntiAimSpeed = Value
+    end
+})
+
+
+AntiAimSettings:SetupDependencies({
+    { Toggles.EnableAA, true }
+})
+
+
+local MovementLeft = Tabs.Misc:AddLeftGroupbox("Movement", "cloudy")
+
+MovementLeft:AddCheckbox("Walkspeed", {
+    Text = "Enable Walkspeed",
+    Default = false,
+    Callback = function(val)
+        WalkspeedEnabled = val
+        if val then
+            setWalkSpeedInstant(WalkspeedValue)
+        else
+            setWalkSpeedInstant(16)
+        end
+    end,
+})
+
+MovementLeft:AddSlider("WsAmount", {
+    Text = "Walkspeed Amount",
+    Default = 16,
+    Min = 1,
+    Max = 1000,
+    Rounding = 0,
+    Callback = function(val)
+        WalkspeedValue = val
+        if WalkspeedEnabled then
+            setWalkSpeedInstant(WalkspeedValue)
+        end
+    end,
+})
+
+MovementLeft:AddLabel("Keybind"):AddKeyPicker("WalkspeedKeybind", {
+    Default = "V",
+    SyncToggleState = true,
+    Mode = "Toggle",
+    Text = "Walkspeed Key",
+    ChangedCallback = function(newKey)
+        walkspeedKey = Enum.KeyCode[newKey]
+    end,
+})
+
+MovementLeft:AddCheckbox("Fly", {
+    Text = "Enable Flight",
+    Default = false,
+    Callback = function(val)
+        if val and not FlightEnabled then
+            startFlight()
+        elseif not val and FlightEnabled then
+            stopFlight()
+        end
+    end,
+})
+
+MovementLeft:AddLabel("Keybind"):AddKeyPicker("FlightKeybind", {
+    Default = "F",
+    SyncToggleState = true,
+    Mode = "Toggle",
+    Text = "Flight Key",
+    ChangedCallback = function(newKey)
+        FlightKeybind = Enum.KeyCode[newKey]
+    end,
+})
+
+MovementLeft:AddSlider("FlightAmount", {
+    Text = "Flight Amount",
+    Default = 10,
+    Min = 1,
+    Max = 1000,
+    Rounding = 0,
+    Callback = function(val)
+        FlightSpeed = val
+    end,
+})
+
+local jumpPowerEnabled = false
+local jumpAmount = 50 
+
+MovementLeft:AddCheckbox("JumpPower", {
+    Text = "Enable Jump Power",
+    Default = false,
+    Callback = function(val)
+        jumpPowerEnabled = val
+        if jumpPowerEnabled then
+            -- Apply the jump power when enabled
+            if game:GetService("Players").LocalPlayer and game:GetService("Players").LocalPlayer.Character then
+                local humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+                if humanoid then
+                    humanoid.UseJumpPower = true
+                    humanoid.JumpPower = jumpAmount
+                end
+            end
+        else
+            -- Optionally reset to default (Roblox default is 50)
+            if game:GetService("Players").LocalPlayer and game:GetService("Players").LocalPlayer.Character then
+                local humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+                if humanoid then
+                    humanoid.JumpPower = 50
+                end
+            end
+        end
+    end,
+})
+
+MovementLeft:AddSlider("JumpAmount", {
+    Text = "Jump Amount",
+    Default = 50,
+    Min = 0,
+    Max = 500,
+    Rounding = 0,
+    Callback = function(val)
+        jumpAmount = val
+        if jumpPowerEnabled then
+            if game:GetService("Players").LocalPlayer and game:GetService("Players").LocalPlayer.Character then
+                local humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+                if humanoid then
+                    humanoid.UseJumpPower = true
+                    humanoid.JumpPower = jumpAmount
+                end
+            end
+        end
+    end,
+})
+
+local gravityEnabled = false
+local gravityAmount = 50
+
+MovementLeft:AddCheckbox("GravityChanger", {
+    Text = "Gravity Changer",
+    Default = false,
+    Callback = function(val)
+        gravityEnabled = val
+        if gravityEnabled then
+            -- Apply the custom gravity value
+            workspace.Gravity = gravityAmount
+        else
+            -- Reset gravity to Roblox default (196.2)
+            workspace.Gravity = 196.2
+        end
+    end,
+})
+
+MovementLeft:AddSlider("GravityAmount", {
+    Text = "Gravity Amount",
+    Default = 50,
+    Min = 0,
+    Max = 500,
+    Rounding = 0,
+    Callback = function(val)
+        gravityAmount = val
+        if gravityEnabled then
+            -- Update gravity live when enabled
+            workspace.Gravity = gravityAmount
+        end
+    end,
+})
+
+local NoclipEnabled = false
+
+MovementLeft:AddCheckbox("Noclip", {
+    Text = "Noclip",
+    Default = false,
+    Callback = function(val)
+        NoclipEnabled = val
+    end,
+})
+
+-- Noclip loop
+game:GetService("RunService").Stepped:Connect(function()
+    if NoclipEnabled then
+        local character = game:GetService("Players").LocalPlayer.Character
+        if character then
+            for _, part in pairs(character:GetDescendants()) do
+                if part:IsA("BasePart") then
+                    part.CanCollide = false
+                end
+            end
+        end
+    end
+end)
+
+local General = Tabs.Misc:AddRightGroupbox("General", "atom")
+
+local NoJumpCooldownEnabled = false
+local NoSlowDownEnabled = false
+
+local mt = getrawmetatable(game)
+local oldNewIndex = mt.__newindex
+setreadonly(mt, false)
+
+mt.__newindex = newcclosure(function(self, key, value)
+    if NoJumpCooldownEnabled and key == "JumpPower" then
+        value = 50
+    end
+    if NoSlowDownEnabled and key == "WalkSpeed" and value < 16 then
+        value = 16
+    end
+    return oldNewIndex(self, key, value)
+end)
+
+
+General:AddCheckbox("NoJumpCooldown", {
+    Text = "No jump cooldown",
+    Default = false,
+    Callback = function(val)
+        NoJumpCooldownEnabled = val
+    end,
+})
+
+General:AddCheckbox("NoSlowDown", {
+    Text = "No slowdown",
+    Default = false,
+    Callback = function(val)
+        NoSlowDownEnabled = val
+    end,
+})
+
+General:AddCheckbox("ChatLogs", {
+    Text = "Show Chat",
+    Default = false,
+    Callback = function(val)
+        
+    end,
+})
+
+General:AddCheckbox("AntiSit", {
+    Text = "No Sit",
+    Default = false,
+    Callback = function(val)
+        antiSitEnabled = val
+        if not val then
+            local humanoid = getHumanoid()
+            if humanoid then
+                humanoid.Sit = false
+            end
+        end
+    end,
+})
+
+local Server = Tabs.Misc:AddRightGroupbox("Server", "database")
+
+local TeleportService = game:GetService("TeleportService")
+local PlaceId, JobId = game.PlaceId, game.JobId
+
+function RejoinAction()
+    TeleportService:TeleportToPlaceInstance(PlaceId, JobId)
+end
+
+Server:AddButton({
+    Text = "Rejoin",
+    Func = function()
+        RejoinAction()
+    end,
+    DoubleClick = true
+})
+
+Server:AddButton({
+    Text = "Join Different server",
+    Func = function()
+        local placeId = game.PlaceId
+        local currentJobId = game.JobId
+        local servers = {}
+        
+        -- Query public servers using HTTPService
+        local success, result = pcall(function()
+            return HttpService:JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. placeId .. "/servers/Public?sortOrder=Desc&limit=100"))
+        end)
+
+        if success and result and result.data then
+            for _, server in pairs(result.data) do
+                if server.playing < server.maxPlayers and server.id ~= currentJobId then
+                    table.insert(servers, server.id)
+                end
+            end
+
+            if #servers > 0 then
+                local randomServer = servers[math.random(1, #servers)]
+                TeleportService:TeleportToPlaceInstance(placeId, randomServer, Players.LocalPlayer)
+            else
+                warn("No other servers found.")
+            end
+        else
+            warn("Failed to retrieve server list.")
+        end
+    end,
+    DoubleClick = true
+})
+
+local InfYield = Tabs.Misc:AddRightGroupbox("InfYield", "ghost")
+
+InfYield:AddButton({
+    Text = "Infinite Yield",
+    Func = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DarkNetworks/Infinite-Yield/refs/heads/main/latest.lua"))()
+        Library:Notify("WARNING! Dont use inf yield in games like da hood with basic anticheat, if u dont know if ur game has inf yield detected its better to not use it.", 5)
+    end,
+    DoubleClick = true
+})
+
+
+
+local PlayerESP = Tabs.Visuals:AddLeftGroupbox("Player ESP", "user-pen")
+
+PlayerESP:AddCheckbox("EnableESP", {
+    Text = "Enable ESP",
+    Default = false,
+    Callback = function(val)
+        espEnabled = val
+    end
+})
+
+PlayerESP:AddCheckbox("Enable2DBoxes", {
+    Text = "Enable 2D Boxes",
+    Default = false,
+    Callback = function(val)
+        Settings.Enable2DBoxes = val
+    end,
+})
+
+
+PlayerESP:AddCheckbox("Enable3DBoxes", {
+    Text = "Enable 3D Cubes",
+    Default = false,
+    Callback = function(val)
+
+    end,
+})
+
+PlayerESP:AddCheckbox("EnableHealth", {
+    Text = "Enable Health",
+    Default = false,
+    Callback = function(val)
+        Settings.EnableHealth = val
+    end,
+})
+
+Settings = Settings or {}
+Settings.EnableName = false
+Settings.HideRobloxTags = false -- set this somewhere else with your other checkbox
+
+PlayerESP:AddCheckbox("EnableName", {
+    Text = "Enable Name",
+    Default = false,
+    Callback = function(val)
+        Settings.EnableName = val
+
+        local function updatePlayer(player)
+            if player.Character then
+                local hum = player.Character:FindFirstChildOfClass("Humanoid")
+                if hum then
+                    -- Roblox nametag depends ONLY on HideRobloxTags
+                    hum.DisplayDistanceType = Settings.HideRobloxTags
+                        and Enum.HumanoidDisplayDistanceType.None
+                        or Enum.HumanoidDisplayDistanceType.Viewer
+
+                    -- ESP logic
+                    if val then
+                        -- Show ESP name
+                        -- CreateBillboardGui(player)
+                    else
+                        -- Hide ESP name
+                        -- RemoveBillboardGui(player)
+                    end
+                end
+            end
+        end
+
+        local function onCharacterAdded(character)
+            local plr = Players:GetPlayerFromCharacter(character)
+            if plr then
+                local hum = character:WaitForChild("Humanoid", 5)
+                if hum then
+                    hum.DisplayDistanceType = Settings.HideRobloxTags
+                        and Enum.HumanoidDisplayDistanceType.None
+                        or Enum.HumanoidDisplayDistanceType.Viewer
+
+                    if val then
+                        -- CreateBillboardGui(plr)
+                    else
+                        -- RemoveBillboardGui(plr)
+                    end
+                end
+            end
+        end
+
+        -- Apply to current players
+        for _, plr in ipairs(Players:GetPlayers()) do
+            plr.CharacterAdded:Connect(onCharacterAdded)
+            updatePlayer(plr)
+        end
+
+        -- Apply to future players
+        Players.PlayerAdded:Connect(function(plr)
+            plr.CharacterAdded:Connect(onCharacterAdded)
+            updatePlayer(plr)
+        end)
+    end,
+})
+
+
+
+local NameSettings = PlayerESP:AddDependencyBox()
+
+--// Checkbox setting
+NameSettings:AddCheckbox("DisableOverHead", {
+    Text = "Hide roblox nametags",
+    Default = false,
+    Callback = function(val)
+        local Players = game:GetService("Players")
+
+        -- Function to set nametag visibility
+        local function setNametag(player, hide)
+            if player.Character then
+                local hum = player.Character:FindFirstChildOfClass("Humanoid")
+                if hum then
+                    hum.DisplayDistanceType = hide and Enum.HumanoidDisplayDistanceType.None or Enum.HumanoidDisplayDistanceType.Viewer
+                end
+            end
+        end
+
+        -- Function to handle when a character spawns
+        local function onCharacterAdded(character)
+            local hum = character:WaitForChild("Humanoid", 5)
+            if hum then
+                hum.DisplayDistanceType = val and Enum.HumanoidDisplayDistanceType.None or Enum.HumanoidDisplayDistanceType.Viewer
+            end
+        end
+
+        -- Disconnect old connections if re-running
+        if _G.DisableOverHeadConnections then
+            for _, conn in ipairs(_G.DisableOverHeadConnections) do
+                conn:Disconnect()
+            end
+        end
+        _G.DisableOverHeadConnections = {}
+
+        -- Connect for all players
+        for _, player in pairs(Players:GetPlayers()) do
+            table.insert(_G.DisableOverHeadConnections, player.CharacterAdded:Connect(onCharacterAdded))
+            setNametag(player, val)
+        end
+
+        -- Connect for new players joining
+        table.insert(_G.DisableOverHeadConnections, Players.PlayerAdded:Connect(function(player)
+            table.insert(_G.DisableOverHeadConnections, player.CharacterAdded:Connect(onCharacterAdded))
+            setNametag(player, val)
+        end))
+    end,
+})
+
+
+NameSettings:SetupDependencies({
+    { Toggles.EnableName, true }
+})
+
+PlayerESP:AddCheckbox("EnableDistance", {
+    Text = "Enable Distance",
+    Default = false,
+    Callback = function(val)
+        
+    end,
+})
+
+local tracersEnabled = false
+
+PlayerESP:AddCheckbox("PlayerTracers", {
+    Text = "Enable Tracers",
+    Default = false,
+    Callback = function(val)
+        tracersEnabled = val
+    end,
+})
+
+
+
+
+local Shit = Tabs.Visuals:AddRightGroupbox("Shit", "user-round-cog")
+local customFOVEnabled = false
+local customFOVValue = 70
+local aspectRatioEnabled = false
+local aspectRatioAmount = 1 -- from your UI slider (0.1 to 1)
+
+
+
+Shit:AddCheckbox("FieldOfView", {
+    Text = "Custom Field of view",
+    Default = false,
+    Callback = function(val)
+        customFOVEnabled = val
+        if customFOVEnabled then
+            Camera.FieldOfView = customFOVValue
+        else
+            Camera.FieldOfView = 70
+        end
+    end,
+})
+
+local FOVSettings = Shit:AddDependencyBox()
+
+FOVSettings:AddSlider("FieldOfViewAmount", {
+    Text = "Field Of View Amount",
+    Default = 70,
+    Min = 30,
+    Max = 120,
+    Rounding = 0,
+    Callback = function(val)
+        customFOVValue = val
+        if customFOVEnabled then
+            Camera.FieldOfView = customFOVValue
+        end
+    end,
+})
+
+FOVSettings:SetupDependencies({
+    { Toggles.FieldOfView, true }
+})
+
+
+
+Shit:AddCheckbox("AspectRatio", {
+    Text = "Aspect Ratio",
+    Default = false,
+    Callback = function(val)
+        if val then
+            getgenv().res = nil
+        else
+            getgenv().res = "disabled"
+        end
+    end,
+})
+
+local ArAmount = Shit:AddDependencyBox()
+
+ArAmount:AddSlider("AspectRatioAmount", {
+    Text = "Aspect Ratio Amount",
+    Default = 1,
+    Min = 0.1,
+    Max = 1,
+    Rounding = 1,
+    Callback = function(val)
+        getgenv().Resolution[".gg/resolution"] = val
+    end,
+})
+
+ArAmount:SetupDependencies({
+    { Toggles.AspectRatio, true }
+})
+
+
+
+RunService:BindToRenderStep("AspectRatioStretch", Enum.RenderPriority.Camera.Value + 1, function()
+    if aspectRatioEnabled then
+        local cf = Camera.CFrame
+        local pos = cf.Position
+        local lookVector = cf.LookVector
+        local stretchedLookVector = Vector3.new(lookVector.X, lookVector.Y * aspectRatioAmount, lookVector.Z).Unit
+        Camera.CFrame = CFrame.new(pos, pos + stretchedLookVector)
+    else
+        -- Do nothing, leave camera alone
+    end
+end)
+
+Shit:AddCheckbox("Crosshair", {
+    Text = "Draw Custom Crosshair",
+    Default = false,
+    Callback = function(val)
+        crosshairEnabled = val
+
+        -- Handle cursor visibility depending on Crosshair and DisableCursor
+        if not val then
+            -- If main Crosshair is off, show cursor no matter what
+            UserInputService.OverrideMouseIconBehavior = Enum.OverrideMouseIconBehavior.None
+            UserInputService.MouseIconEnabled = true
+        else
+            -- If crosshair is on AND both CrosshairAtMouse and DisableCursor are on, hide it again
+            if Toggles.CrosshairMouse and Toggles.CrosshairMouse.Value and Settings.DisableCursor then
+                UserInputService.MouseIconEnabled = false
+                UserInputService.OverrideMouseIconBehavior = Enum.OverrideMouseIconBehavior.ForceHide
+            end
+        end
+    end,
+})
+
+
+
+
+local CrosshairSettings = Shit:AddDependencyBox()
+
+CrosshairSettings:AddCheckbox("CrosshairSpin", {
+    Text = "Crosshair Spin",
+    Default = false,
+    Callback = function(val)
+        spinEnabled = val
+        if not val then
+            spinAngle = 0
+            -- Reset crosshair rotation here, e.g. set UI rotation to 0
+            ResetCrosshairRotation()
+        end
+    end,
+})
+
+
+local CrosshairSpeed = CrosshairSettings:AddDependencyBox()
+
+CrosshairSpeed:AddSlider("CrosshairSpinTime", {
+    Text = "Spin Speed",
+    Default = 0,
+    Min = 0,
+    Max = 10,
+    Rounding = 0,
+    Callback = function(val)
+        spinSpeed = val
+    end,
+})
+
+
+CrosshairSpeed:SetupDependencies({
+    { Toggles.CrosshairSpin, true }
+})
+
+CrosshairSettings:AddSlider("CrosshairLength", {
+    Text = "Crosshair Length",
+    Default = 10,
+    Min = 1,
+    Max = 40,
+    Rounding = 0,
+    Callback = function(val)
+        crosshairLength = val
+    end,
+})
+
+CrosshairSettings:AddSlider("CrosshairWidth", {
+    Text = "Crosshair Width",
+    Default = 10,
+    Min = 1,
+    Max = 20,
+    Rounding = 0,
+    Callback = function(val)
+        crosshairWidth = val
+    end,
+})
+
+CrosshairSettings:AddSlider("CrosshairGap", {
+    Text = "Crosshair Gap",
+    Default = 0,
+    Min = 0,
+    Max = 10,
+    Rounding = 0,
+    Callback = function(val)
+        crosshairGap = val
+    end,
+})
+
+CrosshairSettings:AddCheckbox("CrosshairMouse", {
+    Text = "Crosshair At Mouse",
+    Default = false,
+    Callback = function(val)
+        useMouse = val
+        
+        if not val then
+            -- When CrosshairAtMouse is disabled, restore the cursor regardless of DisableCursor
+            UserInputService.OverrideMouseIconBehavior = Enum.OverrideMouseIconBehavior.None
+            UserInputService.MouseIconEnabled = true
+        else
+            -- If CrosshairAtMouse is enabled AND HideCursor is enabled, enforce hiding again
+            if Settings.DisableCursor then
+                UserInputService.MouseIconEnabled = false
+                UserInputService.OverrideMouseIconBehavior = Enum.OverrideMouseIconBehavior.ForceHide
+            end
+        end
+    end,
+})
+
+local HideCursor = CrosshairSettings:AddDependencyBox()
+
+HideCursor:AddCheckbox("DisableCursor", {
+    Text = "Hide roblox cursor",
+    Default = false,
+    Callback = function(val)
+        Settings.DisableCursor = val
+
+        if val and useMouse then
+            UserInputService.MouseIconEnabled = false
+            UserInputService.OverrideMouseIconBehavior = Enum.OverrideMouseIconBehavior.ForceHide
+        else
+            -- Only restore if CrosshairAtMouse is off or DisableCursor is off
+            UserInputService.OverrideMouseIconBehavior = Enum.OverrideMouseIconBehavior.None
+            UserInputService.MouseIconEnabled = true
+        end
+    end,
+})
+
+
+
+HideCursor:SetupDependencies({
+    { Toggles.CrosshairMouse, true }
+})
+
+CrosshairSettings:SetupDependencies({
+    { Toggles.Crosshair, true }
+})
+
+
+
+Shit:AddCheckbox("2DHitMarker", {
+    Text = "Draw 2D hit marker",
+    Default = false,
+    Callback = function(val)
+        
+    end,
+})
+
+Shit:AddCheckbox("3DHitMarker", {
+    Text = "Draw 3D hit marker",
+    Default = false,
+    Callback = function(val)
+        
+    end,
+})
+
+Shit:AddCheckbox("Fullbright", {
+	Text = "Fullbright",
+	Default = false,
+	Callback = function(val)
+		if val then
+			Lighting.Brightness = 1.25
+			Lighting.Ambient = Color3.fromRGB(180, 180, 180) -- soft grey ambient
+			Lighting.OutdoorAmbient = Color3.fromRGB(200, 200, 200)
+			Lighting.GlobalShadows = false
+		else
+			resetLighting()
+		end
+	end,
+})
+
+-- === No Fog Checkbox ===
+Shit:AddCheckbox("NoFog", {
+	Text = "Remove fog",
+	Default = false,
+	Callback = function(val)
+		if val then
+			Lighting.FogStart = 1e6
+			Lighting.FogEnd = 1e6
+		else
+			resetLighting()
+		end
+	end,
+})
+
+local freezeTime = false
+
+Shit:AddCheckbox("WorldTime", {
+    Text = "World Time",
+    Default = false,
+    Callback = function(val)
+        freezeTime = val
+        if val then
+            freezeHour = Options.WorldTimeAmount.Value
+            Lighting.TimeOfDay = string.format("%02d:00:00", freezeHour)
+        else
+            Lighting.TimeOfDay = "12:00:00"
+        end
+    end,
+})
+
+
+local WorldTimeSettings = Shit:AddDependencyBox()
+
+WorldTimeSettings:AddSlider("WorldTimeAmount", {
+    Text = "Time",
+    Default = 12,
+    Min = 0,
+    Max = 24,
+    Rounding = 0,
+    Callback = function(val)
+        if freezeTime then
+            freezeHour = val
+            Lighting.TimeOfDay = string.format("%02d:00:00", freezeHour)
+        end
+    end,
+})
+
+
+WorldTimeSettings:SetupDependencies({
+    { Toggles.WorldTime, true }
+})
+
+local watermark
+local watermarkLink
+
+local function getTextWidth(text, size)
+    return #text * (size * 0.6) -- 0.6 is approx char width ratio, tweak if needed
+end
+
+Shit:AddCheckbox("Watermark", {
+    Text = "Watermark",
+    Default = false,
+    Callback = function(val)
+        if val then
+            local screenSize = Camera.ViewportSize
+            local centerX = screenSize.X / 2
+            local centerY = screenSize.Y / 2
+
+            watermark = Drawing.new("Text")
+            watermark.Text = "soft aim"
+            watermark.Size = 18
+            watermark.Color = Color3.fromRGB(255, 255, 255)
+            watermark.Position = Vector2.new(centerX, centerY)
+            watermark.Outline = true
+            watermark.Center = true -- Aligns the text to the center
+            watermark.Visible = true
+            watermark.Font = Enum.Font.Arimo
+
+        else
+            if watermark then
+                watermark:Remove()
+                watermark = nil
+            end
+            if watermarkLink then
+                watermarkLink:Remove()
+                watermarkLink = nil
+            end
+        end
+    end,
+})
+
+
+Shit:AddCheckbox("CursorWatermark", {
+    Text = "Cursor Watermark",
+    Default = false,
+    Callback = function(val)
+        cursorWatermark.Visible = val
+    end,
+})
+
+local Players = Tabs.Players:AddLeftGroupbox("Players", "globe-lock")
+local selectedPlayer -- store the chosen player name globally in this script
+local spectating = false
+local currentConnection
+
+Players:AddDropdown("PlayerDropdown", {
+    SpecialType = "Player",
+    Text = "Select Players",
+    Multi = false,
+    ExcludeLocalPlayer = true,
+    Searchable = true,
+    Callback = function(choice)
+        -- if the UI lib gives a string, turn it into a Player
+        if typeof(choice) == "string" then
+            selectedPlayer = game:GetService("Players"):FindFirstChild(choice)
+        elseif typeof(choice) == "Instance" and choice:IsA("Player") then
+            selectedPlayer = choice
+        else
+            selectedPlayer = nil
+        end
+        print("[DEBUG] Selected player:", selectedPlayer and selectedPlayer.Name or "None")
+    end,
+})
+
+local Control = Tabs.Players:AddLeftGroupbox("Control", "circle-user")
+
+local Players = game:GetService("Players")
+local TextChatService = game:GetService("TextChatService")
+local LocalPlayer = Players.LocalPlayer
+
+local SelectedUserIds = {}
+
+local function RebuildSelection(choice)
+    SelectedUserIds = {}
+
+    if type(choice) ~= "table" then return end
+    for k, v in pairs(choice) do
+        local item = v
+        -- Some UI libs pass a map like {["Name"]=true}; handle that too
+        if type(k) == "string" and type(v) == "boolean" then
+            item = k
+        end
+
+        local userId
+        if typeof(item) == "Instance" and item:IsA("Player") then
+            userId = item.UserId
+        elseif type(item) == "string" then
+            local plr = Players:FindFirstChild(item)
+            if plr then userId = plr.UserId end
+        elseif type(item) == "number" then
+            userId = item
+        end
+
+        if userId then SelectedUserIds[userId] = true end
+    end
+
+    -- Debug: print current controllers
+    local names = {}
+    for _, pl in ipairs(Players:GetPlayers()) do
+        if SelectedUserIds[pl.UserId] then table.insert(names, pl.Name) end
+    end
+    print("[Controllers] Selected -> {" .. table.concat(names, ", ") .. "}")
+end
+
+-- Hook your dropdown
+Control:AddDropdown("ControlDropdown", {
+    SpecialType = "Player",
+    Text = "Select Controllers",
+    Multi = true,
+    ExcludeLocalPlayer = true,
+    Searchable = true,
+    Callback = RebuildSelection,
+})
+
+-- === Command handler ===
+local function HandleCommand(sender, message)
+    -- Ignore self
+    if sender == LocalPlayer then
+        return
+    end
+
+    local msg = string.lower(message)
+
+    if msg == "!bring" then
+        local myChar = LocalPlayer.Character
+        local theirChar = sender.Character
+        local myHRP = myChar and myChar:FindFirstChild("HumanoidRootPart")
+        local theirHRP = theirChar and theirChar:FindFirstChild("HumanoidRootPart")
+
+        if myHRP and theirHRP then
+            myHRP.CFrame = theirHRP.CFrame + Vector3.new(0, 3, 0)
+            print("[Controllers] Teleported to", sender.Name)
+        end
+    end
+end
+
+
+-- === Chat listeners (new TextChatService first, legacy fallback) ===
+local function HookTextChannel(ch)
+    if ch and ch:IsA("TextChannel") then
+        ch.MessageReceived:Connect(function(message)
+            local src = message.TextSource
+            if not src then return end
+            local sender = Players:GetPlayerByUserId(src.UserId)
+            if not sender then return end
+            print(("[Chat][%s] %s: %s"):format(ch.Name, sender.Name, message.Text))
+            HandleCommand(sender, message.Text)
+        end)
+    end
+end
+
+local function TryHookNewChat()
+    local channelsFolder = TextChatService:FindFirstChild("TextChannels")
+    if not channelsFolder then return false end
+
+    for _, ch in ipairs(channelsFolder:GetChildren()) do
+        HookTextChannel(ch)
+    end
+    channelsFolder.ChildAdded:Connect(function(ch)
+        task.wait()
+        HookTextChannel(ch)
+    end)
+    print("[Controllers] Hooked TextChatService channels")
+    return true
+end
+
+local function HookLegacyChat()
+    local function hookPlr(plr)
+        plr.Chatted:Connect(function(msg)
+            print(("[Chat][Legacy] %s: %s"):format(plr.Name, msg))
+            HandleCommand(plr, msg)
+        end)
+    end
+    for _, p in ipairs(Players:GetPlayers()) do hookPlr(p) end
+    Players.PlayerAdded:Connect(hookPlr)
+    print("[Controllers] Hooked legacy .Chatted")
+end
+
+if not TryHookNewChat() then
+    HookLegacyChat()
+end
+
+Control:AddDivider()
+
+local Commands = Control:AddLabel("List of Commands:")
+local Commands = Control:AddLabel("!bring")
+local Commands = Control:AddLabel("!bang (player) / !unbang")
+local Commands = Control:AddLabel("!reset")
+
+
+
+local Punishments = Tabs.Players:AddRightGroupbox("Actions", "circle-alert")
+
+Punishments:AddButton({
+    Text = "Teleport",
+    Func = function()
+        if not selectedPlayer then
+            warn("No player selected!")
+            return
+        end
+
+        local localPlayer = game:GetService("Players").LocalPlayer
+        local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()
+        local targetChar = selectedPlayer.Character or selectedPlayer.CharacterAdded:Wait()
+
+        if character and targetChar 
+           and character:FindFirstChild("HumanoidRootPart") 
+           and targetChar:FindFirstChild("HumanoidRootPart") then
+
+            character.HumanoidRootPart.CFrame =
+                targetChar.HumanoidRootPart.CFrame + Vector3.new(0, 5, 0) -- offset above to avoid clipping
+            print("[DEBUG] Teleported to:", selectedPlayer.Name)
+        else
+            warn("Could not teleport! Make sure both characters exist and have HumanoidRootPart.")
+        end
+    end,
+    DoubleClick = false
+})
+
+Punishments:AddCheckbox("Spectate", {
+    Text = "Spectate",
+    Default = false,
+    Callback = function(enabled)
+        if not selectedPlayer then
+            warn("No player selected to spectate!")
+            return
+        end
+
+        spectating = enabled
+
+        if spectating then
+            if not selectedPlayer.Character then
+                selectedPlayer.CharacterAdded:Wait()
+            end
+            print("[DEBUG] Now spectating:", selectedPlayer.Name)
+
+            -- Set camera to follow target
+            Workspace.CurrentCamera.CameraSubject = selectedPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+
+            -- Optional: reconnect camera if they respawn
+            currentConnection = selectedPlayer.CharacterAdded:Connect(function(char)
+                Workspace.CurrentCamera.CameraSubject = char:FindFirstChildWhichIsA("Humanoid")
+            end)
+
+        else
+            print("[DEBUG] Spectate disabled. Returning to local player.")
+            Workspace.CurrentCamera.CameraSubject = LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+            if currentConnection then
+                currentConnection:Disconnect()
+                currentConnection = nil
+            end
+        end
+    end,
+})
+
+local PlayersService = game:GetService("Players")
+
+local bangLoop, bangDied, bangAnim, bang
+
+Punishments:AddCheckbox("Bang", {
+    Text = "Fuck",
+    Default = false,
+    Callback = function(enabled)
+        local localPlayer = PlayersService.LocalPlayer
+        local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+        if not humanoid then return end
+
+        if enabled then
+            -- Find a target player
+            local targetPlayer
+            for _, p in pairs(PlayersService:GetPlayers()) do
+                if p ~= localPlayer and p.Character and p.Character:FindFirstChild("HumanoidRootPart") then
+                    targetPlayer = p
+                    break
+                end
+            end
+            if not targetPlayer then return end
+            local targetRoot = targetPlayer.Character:FindFirstChild("HumanoidRootPart")
+            if not targetRoot then return end
+
+            -- Play bang animation
+            bangAnim = Instance.new("Animation")
+            if humanoid.RigType == Enum.HumanoidRigType.R15 then
+                bangAnim.AnimationId = "rbxassetid://5918726674"
+            else
+                bangAnim.AnimationId = "rbxassetid://148840371"
+            end
+            bang = humanoid:LoadAnimation(bangAnim)
+            bang:Play(0.1, 1, 1)
+            bang:AdjustSpeed(3)
+
+            -- Keep player at target
+            local offset = CFrame.new(0, 0, 1.1)
+            bangLoop = RunService.Stepped:Connect(function()
+                pcall(function()
+                    local currentCharacter = localPlayer.Character
+                    if not currentCharacter then return end
+                    if not selectedPlayer or not selectedPlayer.Character then return end
+                    local targetRoot = selectedPlayer.Character:FindFirstChild("HumanoidRootPart")
+                    if not targetRoot then return end
+
+                    -- Keep local player at selected player
+                    currentCharacter.HumanoidRootPart.CFrame = targetRoot.CFrame * CFrame.new(0, 0, 1.1)
+                end)
+            end)
+
+            -- Disconnect on death
+            bangDied = humanoid.Died:Connect(function()
+                if bangLoop then bangLoop:Disconnect() bangLoop = nil end
+                if bang then bang:Stop() bang = nil end
+                if bangAnim then bangAnim:Destroy() bangAnim = nil end
+                if bangDied then bangDied:Disconnect() bangDied = nil end
+            end)
+
+        else
+            -- Stop bang
+            if bangLoop then bangLoop:Disconnect() bangLoop = nil end
+            if bang then bang:Stop() bang = nil end
+            if bangAnim then bangAnim:Destroy() bangAnim = nil end
+            if bangDied then bangDied:Disconnect() bangDied = nil end
+        end
+    end,
+})
+
+
+
+
+
+local Weapon = Tabs.World:AddLeftGroupbox("Weapon", "swords")
+local bulletSoundsEnabled = false
+
+local bulletSoundsCheckbox = Weapon:AddCheckbox("BulletSounds", {
+    Text = "Bullet sounds",
+    Default = false,
+    Callback = function(enabled)
+        bulletSoundsEnabled = enabled
+    end,
+})
+
+
+
+local hitSoundsCheckbox = Weapon:AddCheckbox("HitSounds", {
+    Text = "Hit sounds",
+    Default = false,
+    Callback = function(val)
+        -- your hit sounds code here
+    end,
+})
+
+local bulletTracersCheckbox = Weapon:AddCheckbox("BulletTracers", {
+    Text = "Bullet Tracers",
+    Default = false,
+    Callback = function(val)
+        -- your bullet tracers code here
+    end,
+})
+
+
+Weapon:AddCheckbox("UnlockCamDistance", {
+    Text = "Infinite zoom distance",
+    Default = false,
+    Callback = function(val)
+        local hostplr = game:GetService("Players").LocalPlayer
+
+        if val then
+            getgenv().host = hostplr
+            host.CameraMaxZoomDistance = math.huge
+        else
+            if getgenv().host then
+                host.CameraMaxZoomDistance = 128 -- or any default value like 10 or 400
+            end
+        end
+    end,
+})
+
+Weapon:AddCheckbox("GunMaterial", {
+    Text = "Gun material",
+    Default = false,
+    Callback = function(state)
+        gunMaterialEnabled = state
+        if not state then
+            restoreOriginalWeapons()
+        end
+    end,
+})
+
+-- Material selection dropdown
+local GunMaterialSettings = Weapon:AddDependencyBox()
+
+GunMaterialSettings:AddDropdown("GunMaterialList", {
+    Values = {"Neon", "Flat", "Smooth Plastic"},
+    Default = 1,
+    Multi = false,
+    Text = "Gun Material",
+    Callback = function(value)
+        selectedMaterial = MaterialMap[value] or Enum.Material.Neon
+    end,
+})
+
+GunMaterialSettings:SetupDependencies({
+    { Toggles.GunMaterial, true }
+})
+
+
+
+
+
+
+
+local SelfPlayer = Tabs.World:AddRightGroupbox("Self", "user-round")
+
+
+SelfPlayer:AddCheckbox("SelfMaterial", {
+    Text = "Self Material",
+    Default = false,
+    Callback = function(enabled)
+        local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+        if not Character then return end
+
+        if enabled then
+            local material = MaterialMap[selectedMaterial]
+            if not material then return end
+
+            applyVisualChanges(Character, material)
+            stripClothing(Character)
+            stripFace(Character)
+
+        else
+            revertVisualChanges()
+            restoreClothing(LocalPlayer.Character)
+            restoreFace(LocalPlayer.Character)
+        end
+    end,
+})
+
+-- Material dropdown
+local SelfMaterialSettings = SelfPlayer:AddDependencyBox()
+
+SelfMaterialSettings:AddDropdown("SelfMaterialList", {
+    Values = {"Neon", "ForceField", "Smooth Plastic"},
+    Default = 1,
+    Multi = false,
+    Text = "Self Material",
+    Callback = function(value)
+        selectedMaterial = value
+    end,
+})
+
+SelfMaterialSettings:SetupDependencies({
+    { Toggles.SelfMaterial, true }
+})
+
+
+
+SelfPlayer:AddCheckbox("ShowArms", {
+    Text = "Show arms in first person",
+    Default = false,
+    Callback = function(val)
+        local player = game:GetService("Players").LocalPlayer
+        local camera = workspace.CurrentCamera
+
+        local function setArmVisibility(visible)
+            local char = player.Character or player.CharacterAdded:Wait()
+            for _, partName in ipairs({"Left Arm", "Right Arm", "LeftUpperArm", "RightUpperArm", "LeftLowerArm", "RightLowerArm", "LeftHand", "RightHand"}) do
+                local part = char:FindFirstChild(partName, true)
+                if part and part:IsA("BasePart") then
+                    part.LocalTransparencyModifier = visible and 0 or 1
+                end
+            end
+        end
+
+        -- Monitor camera mode to update based on first-person
+        local function onRenderStep()
+            if camera.CFrame.Position == camera.Focus.Position then
+                setArmVisibility(val) -- in first person
+            else
+                setArmVisibility(true) -- out of first person: arms visible
+            end
+        end
+
+        if val then
+            game:GetService("RunService"):BindToRenderStep("ShowArmsFirstPerson", Enum.RenderPriority.Camera.Value + 1, onRenderStep)
+        else
+            game:GetService("RunService"):UnbindFromRenderStep("ShowArmsFirstPerson")
+            setArmVisibility(true) -- reset visibility
+        end
+    end,
+})
+
+local Fun = Tabs.Fun:AddLeftGroupbox("Fun", "party-popper")
+local player = game:GetService("Players").LocalPlayer
+local flingEnabled = false
+
+player.CharacterAdded:Connect(function(char)
+    hrp = char:WaitForChild("HumanoidRootPart")
+end)
+
+Fun:AddCheckbox("Fling", {
+    Text = "Fling",
+    Default = false,
+    Callback = function(val)
+        flingEnabled = val
+
+        if val then
+            -- Set up your character for fling
+            for _, part in pairs(player.Character:GetDescendants()) do
+                if part:IsA("BasePart") then
+                    part.CustomPhysicalProperties = PhysicalProperties.new(math.huge, 0.3, 0.5)
+                    part.CanCollide = false
+                    part.Massless = true
+                    part.Velocity = Vector3.new(0,0,0)
+                end
+            end
+
+            -- Apply BodyAngularVelocity
+            local bav = Instance.new("BodyAngularVelocity")
+            bav.Name = "FlingBAV"
+            bav.Parent = hrp
+            bav.AngularVelocity = Vector3.new(0,99999,0)
+            bav.MaxTorque = Vector3.new(0, math.huge, 0)
+            bav.P = math.huge
+
+            -- Fling loop
+            spawn(function()
+                while flingEnabled and bav.Parent do
+                    bav.AngularVelocity = Vector3.new(0,99999,0)
+                    wait(0.2)
+                    bav.AngularVelocity = Vector3.new(0,0,0)
+                    wait(0.1)
+                end
+                if bav then bav:Destroy() end
+            end)
+
+        else
+            -- Reset when fling disabled
+            local bav = hrp:FindFirstChild("FlingBAV")
+            if bav then bav:Destroy() end
+            for _, part in pairs(player.Character:GetDescendants()) do
+                if part:IsA("BasePart") then
+                    part.CanCollide = true
+                    part.Massless = false
+                    part.CustomPhysicalProperties = PhysicalProperties.new()
+                end
+            end
+        end
+    end,
+})
+
+local pushLoop -- for disconnecting later
+
+Fun:AddCheckbox("Push", {
+    Text = "Push anyone",
+    Default = false,
+    Callback = function(enabled)
+        local localPlayer = PlayersService.LocalPlayer
+        local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()
+        if not character or not character:FindFirstChild("HumanoidRootPart") then return end
+
+        if enabled then
+            -- Start pushing
+            pushLoop = RunService.Stepped:Connect(function()
+                pcall(function()
+                    if not selectedPlayer or not selectedPlayer.Character then return end
+                    local targetRoot = selectedPlayer.Character:FindFirstChild("HumanoidRootPart")
+                    if not targetRoot then return end
+
+                    -- Push target away from local player
+                    local dir = (targetRoot.Position - character.HumanoidRootPart.Position).Unit
+                    targetRoot.Velocity = dir * 500 -- adjust force as desired
+                end)
+            end)
+        else
+            -- Stop pushing
+            if pushLoop then
+                pushLoop:Disconnect()
+                pushLoop = nil
+            end
+        end
+    end,
+})
+
+
+Fun:AddCheckbox("ShiftToSprint", {
+    Text = "Shift To Sprint",
+    Default = false,
+    Callback = function(enabled)
+        
+    end,
+})
+
+local ShiftSpeed = Fun:AddDependencyBox()
+
+ShiftSpeed:AddSlider("ShiftSpeed", {
+    Text = "Shift Speed",
+    Default = 24,
+    Min = 0,
+    Max = 1000,
+    Rounding = 0,
+    Callback = function(val)
+        
+    end,
+})
+
+
+ShiftSpeed:SetupDependencies({
+    { Toggles.ShiftToSprint, true }
+})
+
+local Viewport = Fun:AddViewport("MyViewport", {
+    Object = Instance.new("Part"),
+    Camera = Instance.new("Camera"),
+    Interactive = true,
+    AutoFocus = true
+})
+
+
+
+
+
+
+
+
+-- END OF FEATURES
+
+local MenuGroup = Tabs["UI Settings"]:AddLeftGroupbox("Menu")
+
+MenuGroup:AddToggle("KeybindMenuOpen", {
+    Default = Library.KeybindFrame.Visible,
+    Text = "Open Keybind Menu",
+    Callback = function(val)
+        Library.KeybindFrame.Visible = val
+    end,
+})
+
+MenuGroup:AddToggle("ShowCustomCursor", {
+    Text = "Custom Cursor",
+    Default = true,
+    Callback = function(val)
+        Library.ShowCustomCursor = val
+    end,
+})
+
+MenuGroup:AddDropdown("NotificationSide", {
+    Values = { "Left", "Right" },
+    Default = "Right",
+    Text = "Notification Side",
+    Callback = function(val)
+        Library:SetNotifySide(val)
+    end,
+})
+
+MenuGroup:AddDropdown("DPIDropdown", {
+    Values = { "50%", "75%", "100%", "125%", "150%", "175%", "200%" },
+    Default = "100%",
+    Text = "DPI Scale",
+    Callback = function(val)
+        local num = tonumber(val:gsub("%%", ""))
+        if num then Library:SetDPIScale(num) end
+    end,
+})
+
+MenuGroup:AddDivider()
+MenuGroup:AddLabel("Menu bind"):AddKeyPicker("MenuKeybind", {
+    Default = "RightShift",
+    NoUI = true
+})
+
+MenuGroup:AddButton("Unload", function()
+    fovCircle:Remove()
+    Library:Unload()
+end)
+
+-- === Final Setup ===
+Library.ToggleKeybind = Options.MenuKeybind
+ThemeManager:SetLibrary(Library)
+SaveManager:SetLibrary(Library)
+SaveManager:IgnoreThemeSettings()
+SaveManager:SetIgnoreIndexes({ "MenuKeybind" })
+ThemeManager:SetFolder("MyScriptHub")
+SaveManager:SetFolder("MyScriptHub/specific-game")
+SaveManager:SetSubFolder("specific-place")
+SaveManager:BuildConfigSection(Tabs["UI Settings"])
+ThemeManager:ApplyToTab(Tabs["UI Settings"])
+SaveManager:LoadAutoloadConfig()
