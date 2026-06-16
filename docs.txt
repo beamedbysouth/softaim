@@ -1,0 +1,86 @@
+# UI Library Documentation
+
+This library allows you to create a custom UI. Below is the basic guidance on how to use it.
+
+## 1. Create a Tab
+```lua
+local myTab = library:addTab("Tab Name")
+```
+
+## 2. Create a Group (inside a Tab)
+The `pos` argument should be either `'left'` or `'right'`.
+```lua
+local myGroup = myTab:createGroup('left', 'Group Name')
+```
+
+## 3. Add Elements (to a Group)
+
+### Toggle
+```lua
+myGroup:addToggle({
+    text = "Toggle Name",
+    flag = "toggle_flag",
+    callback = function(state) print("Toggle is: " .. tostring(state)) end
+})
+```
+
+### Button
+```lua
+myGroup:addButton({
+    text = "Button Name",
+    callback = function() print("Button clicked!") end
+})
+```
+
+### Slider
+`sub` is the unit/suffix text.
+```lua
+myGroup:addSlider({
+    text = "Slider Name",
+    flag = "slider_flag",
+    min = 0,
+    max = 100,
+    value = 50,
+    callback = function(value) print("Value: " .. value) end
+}, "%")
+```
+
+### Textbox
+```lua
+myGroup:addTextbox({
+    text = "Textbox Label",
+    flag = "textbox_flag",
+    value = "Default Text",
+    callback = function() print("Value changed") end
+})
+```
+
+### List
+```lua
+myGroup:addList({
+    text = "List Name",
+    flag = "list_flag",
+    values = {"Option 1", "Option 2"},
+    multiselect = false,
+    callback = function(value) print("Selected: " .. value) end
+})
+```
+
+### Color Picker
+```lua
+myGroup:addColorpicker({
+    text = "Color Name",
+    flag = "color_flag",
+    color = Color3.new(1, 1, 1),
+    callback = function(color) print("Color: " .. tostring(color)) end
+})
+```
+
+### Keybind
+```lua
+myGroup:addKeybind({
+    text = "Keybind Name",
+    flag = "key_flag",
+    key = Enum.KeyCode.RightShift,
+    callback = function() print("Keybind pressed!") end
+})
