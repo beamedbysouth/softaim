@@ -7,7 +7,6 @@ local localPlayer    = players.LocalPlayer
 local mouse          = localPlayer:GetMouse()
 
 local menu           = game:GetObjects("rbxassetid://12705540680")[1]
-
 menu.bg.Position     = UDim2.new(0.5,-menu.bg.Size.X.Offset/2,0.5,-menu.bg.Size.Y.Offset/2)
 menu.Parent          = game:GetService("CoreGui")
 menu.bg.pre.Text = 'Seere<font color="#4517ff">.vip</font> - fiji was here!!!!'
@@ -1743,6 +1742,7 @@ uisettings:addTextbox({text = "Menu Title",flag = "menutitle"})
 uisettings:addTextbox({text = "Domain",flag = "menudomain"})
 uisettings:addColorpicker({text = "Domain Accent",ontop = true,flag = "domainaccent",color = Color3.new(1,1,1)})
 uisettings:addColorpicker({text = "Menu Accent",ontop = true,flag = "menuaccent",color = Color3.new(1,1,1)})
+uisettings:addButton({text = "Unload UI", callback = function() library.notifyText:Remove() menu:Destroy() end})
 
 othersettings:addToggle({text = "Show Keybinds",flag = "show game name"})
 configsettings:addButton({text = "Copy Game Invite"})
